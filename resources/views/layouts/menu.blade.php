@@ -10,16 +10,18 @@
     <title>Gestion d'école</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="{{asset("assets/css/bootstrap.css")}}" rel="stylesheet">
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+    <link href="{{ asset("assets/font-awesome/css/font-awesome.css") }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/css/zabuto_calendar.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/js/gritter/css/jquery.gritter.css")}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/lineicons/style.css")}}">
+
+
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link href="{{asset("assets/css/style.css")}}" rel="stylesheet">
+    <link href="{{asset("assets/css/style-responsive.css")}}" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
 
@@ -174,7 +176,7 @@
                         <span>Gestion des profils</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{ url('AjouterProfil') }}">Ajouter nouveau profil</a></li>
+                        <li><a  href="{{ url('profs/create') }}">Ajouter nouveau profil</a></li>
                         <li><a  href="{{ url('ListeProfil') }}">la liste des profils</a></li>
                     </ul>
                 </li>
@@ -185,7 +187,7 @@
                         <span>éléve</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{url('AjouterEleve')}}">Inscription</a></li>
+                        <li><a  href="{{url('eleves/create')}}">Inscription</a></li>
                         <li><a  href="{{url('ListeEleve')}}">liste total</a></li>
                         <li><a  href="{{url('ListeParent')}}">gestion des parent</a></li>
                         <li><a  href="{{url('AffectationClasse')}}">affectation aux classes</a></li>
@@ -198,9 +200,9 @@
                         <span>Cours</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{url('ListeMatiere')}}">Matières</a></li>
-                        <li><a  href="{{url('ListeClasse')}}">Classes</a></li>
-                        <li><a  href="{{url('ListeSalle')}}">Salle</a></li>
+                        <li><a  href="{{url('matieres/create')}}">Matières</a></li>
+                        <li><a  href="{{url('classes/create')}}">Classes</a></li>
+                        <li><a  href="{{url('salles/create')}}">Salle</a></li>
                         <li><a  href="#">Notes</a></li>
                         <li><a  href="{{url('ControleExamen')}}">Contrôles et exameans</a></li>
                     </ul>

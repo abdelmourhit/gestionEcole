@@ -15,7 +15,7 @@
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau profil</h4>
-                      <form class="form-horizontal style-form" method="get">
+                      <form class="form-horizontal style-form" action="{{ url('profs') }}" method="post">
                         <ul class="nav nav-tabs">
                           <li class="active"><a data-toggle="tab" href="#prof">Profeseur</a></li>
                           <li><a data-toggle="tab" href="#SG">Surveillant général</a></li>
@@ -25,67 +25,72 @@
                         <div class="tab-content">
                           <div id="prof" class="tab-pane fade in active">
                             <h3>Professeur</h3>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Nom :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Prénom :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Date de naissance :</label>
-                                <div class="col-sm-10">
-                                    <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
-                                <div class="col-sm-10">
-                                  <label class="radio-inline">
-                                    <input type="radio" name="optradio">Homme
-                                  </label>
-                                  <label class="radio-inline">
-                                    <input type="radio" name="optradio">Femme
-                                  </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Adress :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Email :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Telephone :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">CIN :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Salaire :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
 
-              						    <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Nom :</label>
+                                        <div class="col-sm-10">
+                                            <input name="nom" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Prénom :</label>
+                                        <div class="col-sm-10">
+                                            <input name="prenom" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Date de naissance :</label>
+                                        <div class="col-sm-10">
+                                            <input name="date_naissance" type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
+                                        <div class="col-sm-10">
+                                          <label class="radio-inline">
+                                            <input type="radio" name="optradio">Homme
+                                          </label>
+                                          <label class="radio-inline">
+                                            <input type="radio" name="optradio">Femme
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Adresse :</label>
+                                        <div class="col-sm-10">
+                                            <input name="adresse" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Email :</label>
+                                        <div class="col-sm-10">
+                                            <input name="email" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Telephone :</label>
+                                        <div class="col-sm-10">
+                                            <input name="tel" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">CIN :</label>
+                                        <div class="col-sm-10">
+                                            <input name="cin" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Salaire :</label>
+                                        <div class="col-sm-10">
+                                            <input name="" type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <input type="submit" class="btn btn-theme02" value="Enregistrer">
+
 
                           </div>
 <!-- end Professeur *************************************************************************-->
