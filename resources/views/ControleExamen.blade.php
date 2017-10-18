@@ -21,8 +21,9 @@
                           <li><a data-toggle="tab" href="#examen">Examens</a></li>
                         </ul>
 <!-- Controle ************************************************************************************************ -->
-                        <div class="tab-content">
 
+                        <div class="tab-content">
+ 
                           <div id="controle" class="tab-pane fade in active">
                             <h3>Contrôles</h3>
 
@@ -31,7 +32,9 @@
                                 <thead>
                                 <tr>
                                     <th> ID</th>
+                                    <th> Libelle</th>
                                     <th> Date</th>
+                                    <th>Durée</th>
                                     <th> Période</th>
                                     <th> Matiére</th>
                                     <th> Professeur</th>
@@ -41,7 +44,9 @@
                                 <tbody>
                                 <tr>
                                     <td><a href="#">1</a></td>
+                                    <td>Controle numero 1</td>
                                     <td>12/1/2017</td>
+                                    <td>90</td>
                                     <td>S1</td>
                                     <td>Français</td>
                                     <td>AYOUB</td>
@@ -53,7 +58,9 @@
                                 </tr>
                                 <tr>
                                     <td><a href="#">2</a></td>
-                                    <td>2/1/2017</td>
+                                     <td>Controle numero 2</td>
+                                    <td>12/1/2017</td>
+                                    <td>90</td>
                                     <td>S1</td>
                                     <td>العربية</td>
                                     <td>YASSER</td>
@@ -65,7 +72,9 @@
                                 </tr>
                                 <tr>
                                     <td><a href="#">3</a></td>
-                                    <td>6/6/2017</td>
+                                     <td>Controle numero 1</td>
+                                    <td>12/1/2017</td>
+                                    <td>60</td>
                                     <td>S2</td>
                                     <td>Math</td>
                                     <td>Yasser</td>
@@ -79,19 +88,34 @@
                             </table>
 
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter un Contrôle</h4>
-                            <form class="form-horizontal style-form" method="get">
+                          <!--  <form class="form-horizontal style-form" method="get">-->
+                          <form class="form-horizontal style-form" method="post" action="{{url('controles')}}">
+                            {{ csrf_field() }}
 
                                 <div id="eleve" class="tab-pane fade in active">
                                   <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Libelle :</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="exampleInputDOB1" name="libelle" placeholder="Entrée le libelle">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Date :</label>
                                       <div class="col-sm-10">
-                                          <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                                          <input type="date" class="form-control" id="exampleInputDOB1" name="date" placeholder="Entrée la date">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Durée :</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="exampleInputDOB1" name="duree" placeholder="Entrée la durée">
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Période :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="periode">
                                           <option>S1</option>
                                           <option>S2</option>
                                         </select>
@@ -100,7 +124,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Matiére :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="matiere">
                                           <option>Français</option>
                                           <option>العربية</option>
                                           <option>Math</option>
@@ -110,7 +134,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Professeur :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="prof">
                                           <option>Ayoub</option>
                                           <option>Yasser</option>
                                           <option>Abdelmourhit</option>
@@ -120,18 +144,19 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Classe :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="classe">
                                           <option>C1</option>
                                           <option>C2</option>
                                           <option>C3</option>
                                         </select>
                                       </div>
                                   </div>
-                                    <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+                                    <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                                 </form>
                                 </div>
-
+            
                           </div>
+                          
 <!-- end Controle *************************************************************************-->
 <!-- Examens *************************************************************************-->
 
@@ -143,7 +168,9 @@
                                 <thead>
                                 <tr>
                                     <th> ID</th>
+                                    <th> Libelle</th>
                                     <th> Date</th>
+                                    <th>Durée</th>
                                     <th> Période</th>
                                     <th> Matiére</th>
                                     <th> Professeur</th>
@@ -153,7 +180,9 @@
                                 <tbody>
                                 <tr>
                                     <td><a href="#">1</a></td>
+                                    <td>Examen 1</td>
                                     <td>19/1/2017</td>
+                                    <td>90</td>
                                     <td>S1</td>
                                     <td>Français</td>
                                     <td>AYOUB</td>
@@ -165,10 +194,12 @@
                                 </tr>
                                 <tr>
                                     <td><a href="#">2</a></td>
-                                    <td>20/1/2017</td>
+                                    <td>Examen 1</td>
+                                    <td>19/1/2017</td>
+                                    <td>90</td>
                                     <td>S1</td>
-                                    <td>العربية</td>
-                                    <td>YASSER</td>
+                                    <td>Français</td>
+                                    <td>AYOUB</td>
                                     <td>C1</td>
                                     <td>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -177,11 +208,13 @@
                                 </tr>
                                 <tr>
                                     <td><a href="#">3</a></td>
-                                    <td>6/2/2017</td>
+                                   <td>Examen 3</td>
+                                    <td>19/1/2017</td>
+                                    <td>90</td>
                                     <td>S1</td>
-                                    <td>Math</td>
-                                    <td>Yasser</td>
-                                    <td>C2</td>
+                                    <td>Français</td>
+                                    <td>AYOUB</td>
+                                    <td>C1</td>
                                     <td>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
@@ -190,20 +223,34 @@
                                 </tbody>
                             </table>
 
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter un Contrôle</h4>
-                            <form class="form-horizontal style-form" method="get">
+                            <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter un Examen</h4>
+                           <!-- <form class="form-horizontal style-form" method="get">-->
+                           <form class="form-horizontal style-form" method="post" action="{{url('examens')}}">
+                            {{ csrf_field() }}
 
                                 <div id="eleve" class="tab-pane fade in active">
                                   <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Libelle :</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="exampleInputDOB1"  name="libelle" placeholder="Date of Birth">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Date :</label>
                                       <div class="col-sm-10">
-                                          <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                                          <input type="date" class="form-control" id="exampleInputDOB1" name="date" placeholder="Date of Birth">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Durée :</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="exampleInputDOB1" name="duree" placeholder="Date of Birth">
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Période :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="periode">
                                           <option>S1</option>
                                           <option>S2</option>
                                         </select>
@@ -212,7 +259,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Matiére :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="matiere">
                                           <option>Français</option>
                                           <option>العربية</option>
                                           <option>Math</option>
@@ -222,7 +269,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Professeur :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="prof">
                                           <option>Ayoub</option>
                                           <option>Yasser</option>
                                           <option>Abdelmourhit</option>
@@ -232,7 +279,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Classe :</label>
                                       <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" name="classe">
                                           <option>C1</option>
                                           <option>C2</option>
                                           <option>C3</option>
@@ -240,7 +287,7 @@
                                       </div>
                                   </div>
 
-                            <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+                            <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                           </form>
                           </div>
 <!-- end Examens *************************************************************************-->
