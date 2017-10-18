@@ -23,8 +23,20 @@ class ProfController extends Controller
         $prof = new Prof();
         $prof->nom = $request->input('nom');
         $prof->prenom = $request->input('prenom');
-        $prof->date_naissance = $request->input('date_naissance');
         $prof->sexe = $request->input('sexe');
+        $prof->date_naissance = $request->input('date_naissance');
+        $prof->adresse = $request->input('adresse');
+        $prof->email = $request->input('email');
+        $prof->tel = $request->input('tel');
+        $prof->fixe = $request->input('fixe');
+        $prof->photo = $request->input('photo');
+        $prof->ville = $request->input('ville');
+        $prof->type = 'prof';
+        $prof->nationalite = $request->input('nationalite');
+        $prof->cin = $request->input('cin');
+        $prof->date_embauche = $request->input('date_embauche');
+        $prof->nbr_annee_experience = $request->input('nbr_annee_experience');
+        $prof->salaire = $request->input('salaire');
 
         $prof->save();
     }

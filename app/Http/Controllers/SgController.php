@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sg;
 
 class SgController extends Controller
 {
@@ -17,7 +18,27 @@ class SgController extends Controller
     }
 
     //enregistrer
-    public function store(){
+    public function store(Request $request){
+
+        $sg = new Sg();
+        $sg->nom = $request->input('nom');
+        $sg->prenom = $request->input('prenom');
+        $sg->sexe = $request->input('sexe');
+        $sg->date_naissance = $request->input('date_naissance');
+        $sg->adresse = $request->input('adresse');
+        $sg->email = $request->input('email');
+        $sg->tel = $request->input('tel');
+        $sg->fixe = $request->input('fixe');
+        $sg->photo = $request->input('photo');
+        $sg->ville = $request->input('ville');
+        $sg->type = 'sg';
+        $sg->nationalite = $request->input('nationalite');
+        $sg->cin = $request->input('cin');
+        $sg->date_embauche = $request->input('date_embauche');
+        $sg->nbr_annee_experience = $request->input('nbr_annee_experience');
+        $sg->salaire = $request->input('salaire');
+
+        $sg->save();
     
     }
 

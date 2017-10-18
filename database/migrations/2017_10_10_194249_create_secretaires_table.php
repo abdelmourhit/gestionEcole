@@ -15,21 +15,22 @@ class CreateSecretairesTable extends Migration
     {
         Schema::create('secretaires', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
-            $table->string('prenom');
-            $table->boolean('sexe');
-            $table->date('date_naissance');
-            $table->string('adresse');
-            $table->string('email');
-            $table->string('tel');
-            $table->string('fixe');
-            $table->string('photo');
-            $table->string('ville');
-            $table->string('type');
-            $table->string('nationalite');
-            $table->string('cin');
-            $table->date('date-embauche');
-            $table->string('nbr_année_expérience');
+            $table->string('nom',100)->nullable();
+            $table->string('prenom',100)->nullable();
+            $table->boolean('sexe')->nullable();
+            $table->date('date_naissance')->nullable();
+            $table->string('adresse')->nullable();
+            $table->string('email',100)->nullable();
+            $table->string('tel',50)->nullable();
+            $table->string('fixe',50)->nullable();
+            $table->string('photo')->nullable();
+            $table->string('ville',50)->nullable();
+            $table->string('type',50)->nullable();
+            $table->string('nationalite',50)->nullable();
+            $table->string('cin',50)->nullable();
+            $table->date('date_embauche')->nullable();
+            $table->string('nbr_annee_experience',10)->nullable();
+            $table->float('salaire')->nullable();
             $table->timestamps();
         });
     }

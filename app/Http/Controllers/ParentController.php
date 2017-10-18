@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pparent;
 
 class ParentController extends Controller
 {
@@ -13,11 +14,30 @@ class ParentController extends Controller
 
     //affiche le formulaire
     public function create(){
-
+        return view('AjouterEleve');
     }
 
     //enregistrer
-    public function store(){
+    public function store(Request $request){
+
+        $pparent = new Pparent();
+        $pparent->nom = $request->input('nom');
+        $pparent->prenom = $request->input('prenom');
+        $pparent->sexe = $request->input('sexe');
+        $pparent->date_naissance = $request->input('date_naissance');
+        $pparent->adresse = $request->input('adresse');
+        $pparent->email = $request->input('email');
+        $pparent->tel = $request->input('tel');
+        $pparent->fixe = $request->input('fixe');
+        $pparent->photo = $request->input('photo');
+        $pparent->ville = $request->input('ville');
+        $pparent->type = 'parent';
+        $pparent->nationalite = $request->input('nationalite');
+        $pparent->cin = $request->input('cin');
+        $pparent->profession = $request->input('profession');
+        $pparent->type_relation_parental = $request->input('type_relation_parental');
+
+        $pparent->save();
 
     }
 

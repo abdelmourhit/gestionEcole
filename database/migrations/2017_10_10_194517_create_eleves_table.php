@@ -15,20 +15,20 @@ class CreateElevesTable extends Migration
     {
         Schema::create('eleves', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
-            $table->string('prenom');
-            $table->boolean('sexe');
-            $table->date('date_naissance');
-            $table->string('adresse');
-            $table->string('email');
-            $table->string('tel');
-            $table->string('fixe');
-            $table->string('photo');
-            $table->string('ville');
-            $table->string('type');
-            $table->string('nationalite');
-            $table->string('cne');
-            $table->string('matricule');
+            $table->string('nom',100)->nullable();
+            $table->string('prenom',100)->nullable();
+            $table->boolean('sexe')->nullable();
+            $table->date('date_naissance')->nullable();
+            $table->string('adresse')->nullable();
+            $table->string('email',100)->nullable();
+            $table->string('tel',50)->nullable();
+            $table->string('fixe',50)->nullable();
+            $table->string('photo')->nullable();
+            $table->string('ville',50)->nullable();
+            $table->string('type',50)->nullable();
+            $table->string('nationalite',50)->nullable();
+            $table->string('cne',50)->nullable();
+            $table->string('matricule',50)->nullable();
             $table->timestamps();
         });
     }

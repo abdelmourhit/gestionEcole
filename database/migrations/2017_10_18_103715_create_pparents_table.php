@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSgsTable extends Migration
+class CreatePparentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSgsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sgs', function (Blueprint $table) {
+        Schema::create('pparents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom',100)->nullable();
             $table->string('prenom',100)->nullable();
@@ -28,9 +28,8 @@ class CreateSgsTable extends Migration
             $table->string('type',50)->nullable();
             $table->string('nationalite',50)->nullable();
             $table->string('cin',50)->nullable();
-            $table->date('date_embauche')->nullable();
-            $table->string('nbr_annee_experience',10)->nullable();
-            $table->float('salaire')->nullable();
+            $table->string('profession',50)->nullable();
+            $table->string('type_relation_parental',100)->nullable();
             $table->timestamps();
         });
     }
@@ -42,6 +41,6 @@ class CreateSgsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sgs');
+        Schema::dropIfExists('pparents');
     }
 }

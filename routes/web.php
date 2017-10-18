@@ -23,7 +23,7 @@ Route::resource('profs','ProfController');
 Route::resource('sgs','SgController');
 Route::resource('secretaires','SecretaireController');
 Route::resource('eleves','EleveController');
-Route::resource('parents','ParentController');
+Route::resource('pparents','ParentController');
 
 Route::resource('classes','ClasseController');
 Route::resource('matieres','MatiereController');
