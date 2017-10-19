@@ -22,16 +22,62 @@
                           <li class="active"><a data-toggle="tab" href="#eleve">Eléve</a></li>
                           <li><a data-toggle="tab" href="#parent">Parent</a></li>
                         </ul>-->
-<!-- salle ************************************************************************************************ -->
+          <!--liste classe***************** -->
+           <div class="tab-content">
+                          <div id="prof" class="tab-pane fade in active">
+                            <h3>Classes</h3>
+                            <table class="table table-striped table-advance table-hover">
+                              <hr>
+                                <thead>
+                                <tr>
+                                    <th> ID</th>
+                                    <th> libelle</th>
+                                    <th> Description</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><a href="#">1</a></td>
+                                    <td>C1</td>
+                                    <td>Classe 1</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">2</a></td>
+                                    <td>C2</td>
+                                    <td>Classe 2</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">3</a></td>
+                                    <td>C3</td>
+                                    <td>Classe 3</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                          </div>
+          <!--end liste classe***************-->
+<!-- classe ************************************************************************************************ -->
                 <form class="form-horizontal style-form" method="post" action="{{url('classes')}}">
                         {{ csrf_field() }}
                         <div class="tab-content">
                           <div id="eleve" class="tab-pane fade in active">
                             <h3>Classe</h3>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Niveau :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">libelle :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="niveau">
+                                    <input type="text" class="form-control" name="libelle">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -58,7 +104,7 @@
 
 
 
-		</section><! --/wrapper -->
+		</section><!--/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
 

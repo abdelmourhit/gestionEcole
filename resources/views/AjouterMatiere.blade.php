@@ -22,22 +22,84 @@
                           <li class="active"><a data-toggle="tab" href="#eleve">Eléve</a></li>
                           <li><a data-toggle="tab" href="#parent">Parent</a></li>
                         </ul>-->
-<!-- salle ************************************************************************************************ -->
+                        <!-- liste matière -->
+                         <div class="tab-content">
+                          <div id="prof" class="tab-pane fade in active">
+                            <h3>Matiéres</h3>
+                            <table class="table table-striped table-advance table-hover">
+                              <hr>
+                                <thead>
+                                <tr>
+                                    <th> ID</th>
+                                    <th> Nom</th>
+                                    <th> Nom Arabe</th>
+                                    <th> la classe</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><a href="#">1</a></td>
+                                    <td>Français</td>
+                                    <td></td>
+                                    <td>C5</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">2</a></td>
+                                    <td></td>
+                                    <td>العربية</td>
+                                    <td>C1</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">3</a></td>
+                                    <td>Math</td>
+                                    <td></td>
+                                    <td>C3</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                          </div>
+                        <!-- end liste matière -->
+<!-- matière ************************************************************************************************ -->
                 <form class="form-horizontal style-form" method="post" action="{{url('matieres')}}">
                         {{ csrf_field() }}
                         <div class="tab-content">
                           <div id="eleve" class="tab-pane fade in active">
                             <h3>Matière</h3>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Libelle :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Nom :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="libelle">
+                                    <input type="text" class="form-control" name="nom">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Langue :</label>
+
+                          <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Nom arabe :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="langue">
+                                    <input type="text" class="form-control" name="nom_arab">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Classe :</label>
+                                <div class="col-sm-10">
+                                  <select class="form-control" name="classe">
+                                    <option>C1</option>
+                                    <option>C2</option>
+                                    <option>C3</option>
+                                  </select>
                                 </div>
                             </div>
                             

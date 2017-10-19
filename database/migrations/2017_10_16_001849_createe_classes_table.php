@@ -15,7 +15,7 @@ class CreateeClassesTable extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('niveau')->nullable();
+            $table->string('libelle')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
         });

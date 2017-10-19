@@ -9,7 +9,7 @@
 
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i>chaufeurs</h3>
+          	<h3><i class="fa fa-angle-right"></i>Chaufeurs</h3>
 
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
@@ -29,7 +29,8 @@
                                     <th> Nom</th>
                                     <th> Prénom</th>
                                     <th> sexe</th>
-                                    <th> Catégorie permis</th>
+                                    <th> Type permis</th>
+                                    <th> Véhicule</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -39,6 +40,7 @@
                                     <td> Abdelah</td>
                                     <td> Homme</td>
                                     <td> B,C</td>
+                                    <td> Mercedes</td>
                                     <td>
                                         <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -47,10 +49,11 @@
                                 </tr>
                                 <tr>
                                   <td><a href="#">2</a></td>
-                                  <td> harti</td>
-                                  <td> Bochaib</td>
-                                  <td> Homme</td>
-                                  <td> B,C</td>
+                                    <td> Narouze</td>
+                                    <td> Abdelah</td>
+                                    <td> Homme</td>
+                                    <td> B,C</td>
+                                    <td> Mercedes</td>
                                   <td>
                                       <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                       <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -59,10 +62,12 @@
                                 </tr>
                                 <tr>
                                   <td><a href="#">1</a></td>
-                                  <td> raddi</td>
-                                  <td> Bouchta</td>
-                                  <td> Homme</td>
-                                  <td> B,C</td>
+                                    <td> Narouze</td>
+                                    <td> Abdelah</td>
+                                    <td> Homme</td>
+                                   
+                                    <td> B,C</td>
+                                    <td> Mercedes</td>
                                   <td>
                                       <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                       <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -87,59 +92,112 @@
               <div class="col-lg-12">
                   <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter un chaufeur</h4>
-                      <form class="form-horizontal style-form" method="get">
-
+                      <form class="form-horizontal style-form" method="post" action="{{url('chauffeurs')}}">
+                        {{ csrf_field() }}
             <!-- éléve ************************************************************************************************ -->
 
                           <div id="eleve" class="tab-pane fade in active">
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Nom :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="nom">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Prénom :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="prenom">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">CIN :</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Adress :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">sexe :</label>
                                 <div class="col-sm-10">
                                   <label class="radio-inline">
-                                    <input type="radio" name="optradio">Homme
+                                    <input type="radio" name="sexe" value=1>Homme
                                   </label>
                                   <label class="radio-inline">
-                                    <input type="radio" name="optradio">Femme
+                                    <input type="radio" name="sexe" value=0>Femme
                                   </label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">telephone :</label>
+
+                             <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Date de naissance :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                  <input type="date" class="form-control" name="date_naiss">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Catégorie permis :</label>
+
+                             <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Lieu de naissance :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="lieu_naiss">
                                 </div>
                             </div>
-                              <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+
+                             <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Téléphone :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="tel">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Nationnalité :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="nationnalite">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Adresse :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="adresse">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Ville :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="ville">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">CIN :</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name ="cin">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Date de recrutement :</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" name="date_recrutement">
+                                </div>
+                            </div>
+                            
+                           
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Type de permis :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="type_permi">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Véhicule :</label>
+                                <div class="col-sm-10">
+                                  <select class="form-control" name="vehicule">
+                                    <option>Mercedes</option>
+                                    <option>Ford</option>
+                                    <option>Ford 2</option>
+                                  </select>
+                                </div>
+                            </div>
+
+                              <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                           </div>
             <!-- end éléve *************************************************************************-->
 

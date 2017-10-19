@@ -15,8 +15,8 @@ class CreateSalleTable extends Migration
     {
         Schema::create('salles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('libelle');
-            $table->float('surface');
+            $table->string('libelle',60);
+            $table->string('type',60);
             $table->integer('nbr_eleve');
             $table->timestamps();
         });

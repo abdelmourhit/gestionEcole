@@ -31,3 +31,5 @@ Route::resource('salles','SalleController');
 Route::resource('controles','ControleController');
 Route::resource('examens','ExamenController');
 
+Route::resource('chauffeurs','ChauffeurController');
+Route::resource('vehicules','VehiculeController');

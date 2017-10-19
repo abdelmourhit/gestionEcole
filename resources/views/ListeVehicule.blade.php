@@ -30,9 +30,9 @@
                                     <th> Type</th>
                                     <th> Marque</th>
                                     <th> Nombre de place</th>
-                                    <th> Chauffeur</th>
                                     <th> Carburant</th>
                                     <th> Prix</th>
+                                    <th> Chauffeur</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -42,9 +42,9 @@
                                     <td> voiture</td>
                                     <td> DACIA</td>
                                     <td> 6</td>
-                                    <td> Bochaib</td>
                                     <td> Diesel</td>
                                     <td> 150 000</td>
+                                    <td> Bochaib</td>
                                     <td>
                                         <button class="btn btn-success btn-xs"><i class="fa fa-users"></i></button>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -57,9 +57,9 @@
                                     <td> bus</td>
                                     <td> Mercedes</td>
                                     <td> 25</td>
-                                    <td> Bouchta</td>
                                     <td> Diesel</td>
                                     <td> 300 000</td>
+                                    <td> Bouchta</td>
                                     <td>
                                         <button class="btn btn-success btn-xs"><i class="fa fa-users"></i></button>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -99,58 +99,61 @@
               <div class="col-lg-12">
                   <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter une véhicule</h4>
-                      <form class="form-horizontal style-form" method="get">
-
-            <!-- éléve ************************************************************************************************ -->
+                      <form class="form-horizontal style-form" method="post" action="{{url('vehicules')}}">
+                        {{ csrf_field() }}
+            <!-- véhicule ************************************************************************************************ -->
 
                           <div id="eleve" class="tab-pane fade in active">
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Matricul :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="matricule">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Type :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="type">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Marque :</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="marque">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Nombre Place :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="nbr_place">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Carburant :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="carburant">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Chaufeur :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Prix :</label>
                                 <div class="col-sm-10">
-                                  <select class="form-control">
+                                    <input type="text" class="form-control" name="prix"> 
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Chauffeur :</label>
+                                <div class="col-sm-10">
+                                  <select class="form-control" name="chauffeur">
                                     <option>Abdelah</option>
                                     <option>Bochaib</option>
                                     <option>Bouchta</option>
                                   </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Carburant :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Prix :</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                              <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+
+                              <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                           </div>
             <!-- end éléve *************************************************************************-->
 

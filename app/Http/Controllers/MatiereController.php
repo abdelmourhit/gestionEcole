@@ -21,8 +21,9 @@ class MatiereController extends Controller
     public function store(Request $request){
 
         $matiere = new Matiere();
-        $matiere->libelle = $request->input('libelle');
-        $matiere->langue = $request->input('langue');
+        $matiere->nom = $request->input('nom');
+        $matiere->nom_arab = $request->input('nom_arab');
+        $matiere->classe = $request->input('classe');
        
 
         $matiere->save();

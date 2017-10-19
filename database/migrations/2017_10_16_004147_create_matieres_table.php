@@ -15,8 +15,9 @@ class CreateMatieresTable extends Migration
     {
         Schema::create('matieres', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('libelle')->nullable();
-            $table->string('langue')->nullable();
+            $table->string('nom')->nullable();
+            $table->string('nom_arab')->nullable();
+            $table->string('classe')->nullable();
             $table->timestamps();
         });
     }

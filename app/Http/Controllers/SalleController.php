@@ -22,7 +22,7 @@ class SalleController extends Controller
 
         $salle = new Salle();
         $salle->libelle = $request->input('libelle');
-        $salle->surface = $request->input('surface');
+        $salle->type = $request->input('type');
         $salle->nbr_eleve = $request->input('nbreleve');
 
         $salle->save();

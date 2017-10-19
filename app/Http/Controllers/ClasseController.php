@@ -21,7 +21,7 @@ class ClasseController extends Controller
     public function store(Request $request){
 
         $classe = new Classe();
-        $classe->niveau = $request->input('niveau');
+        $classe->libelle = $request->input('libelle');
         $classe->description = $request->input('description');
        
 

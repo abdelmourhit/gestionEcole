@@ -22,7 +22,62 @@
                           <li class="active"><a data-toggle="tab" href="#eleve">Eléve</a></li>
                           <li><a data-toggle="tab" href="#parent">Parent</a></li>
                         </ul>-->
+
+                        <!-- Liste salle *****************-->
+                           <div class="tab-content">
+                          <div id="prof" class="tab-pane fade in active">
+                            <h3>Salles</h3>
+                            <table class="table table-striped table-advance table-hover">
+                              <hr>
+                                <thead>
+                                <tr>
+                                    <th> ID</th>
+                                    <th> Libelle</th>
+                                    <th> Type</th>
+                                    <th> Nombre d'élève</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><a href="#">1</a></td>
+                                    <td>Salle 1</td>
+                                    <td>Moyenne</td>
+                                    <td>30</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">2</a></td>
+                                    <td>Salle 2</td>
+                                    <td>Grand</td>
+                                    <td>45</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">3</a></td>
+                                    <td>Salle 3</td>
+                                    <td>salle de conférance</td>
+                                    <td>50</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                          </div>
+                        <!-- end liste Salle ***************-->
 <!-- salle ************************************************************************************************ -->
+
+
+
+
                 <form class="form-horizontal style-form" method="post" action="{{url('salles')}}">
                         {{ csrf_field() }}
                         <div class="tab-content">
@@ -35,9 +90,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Surface :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Type :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="surface">
+                                    <input type="text" class="form-control" name="type">
                                 </div>
                             </div>
                             <div class="form-group">
