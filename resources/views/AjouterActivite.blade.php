@@ -30,6 +30,7 @@
                                     <th> Description</th>
                                     <th> Date</th>
                                     <th> Nombre de place</th>
+                                    
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -39,6 +40,7 @@
                                     <td>voyage organisé</td>
                                     <td>12/12/2017</td>
                                     <td>40</td>
+                                    
                                     <td>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
@@ -50,6 +52,7 @@
                                     <td>Découvrire les animaux</td>
                                     <td>1/4/2017</td>
                                     <td>30</td>
+                                   
                                     <td>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
@@ -61,6 +64,7 @@
                                     <td>Voyage organisé</td>
                                     <td>1/6/2017</td>
                                     <td>50</td>
+                                    
                                     <td>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
@@ -84,36 +88,39 @@
               <div class="col-lg-12">
                   <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter une Activité</h4>
-                      <form class="form-horizontal style-form" method="get">
-
+                      <form class="form-horizontal style-form" method="post" action="{{url('activites')}}">
+                      {{csrf_field()}}
             <!-- éléve ************************************************************************************************ -->
 
                           <div id="eleve" class="tab-pane fade in active">
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Libelle :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="libelle">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Description :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                   <textarea class="form-control" name="description"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Date :</label>
                                 <div class="col-sm-10">
-                                  <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                                  <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth" name="date_creation">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Nombre Place :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="nbr_place">
                                 </div>
                             </div>
-                              <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+                            
+                             
+
+                              <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                           </div>
             <!-- end éléve *************************************************************************-->
 
