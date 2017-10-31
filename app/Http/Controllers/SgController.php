@@ -10,6 +10,8 @@ class SgController extends Controller
     //lister
     public function index(){
 
+        $listeSg = Sg::all();
+        return view('ListeSg', ['sgs' => $listeSg]);
     }
 
     //affiche le formulaire
@@ -43,6 +45,8 @@ class SgController extends Controller
         $sg->salaire = $request->input('salaire');
 
         $sg->save();
+        
+        return redirect('sgs');
     
     }
 

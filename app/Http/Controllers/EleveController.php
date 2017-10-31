@@ -12,6 +12,9 @@ class EleveController extends Controller
     //lister
     public function index(){
 
+        $listeEleve = Eleve::all();
+        return view('ListeEleve', ['eleves' => $listeEleve]);
+
     }
 
     //affiche le formulaire
@@ -43,7 +46,8 @@ class EleveController extends Controller
         $eleve->matricule = $request->input('matricule');
 
         $eleve->save();
-
+        
+        return redirect('eleves');
     }
 
     //récupérer les info dans le formulaire

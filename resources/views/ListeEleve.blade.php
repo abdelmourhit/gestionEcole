@@ -15,12 +15,11 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i></h4>
+                      <a href="{{ url('eleves/create') }}"><h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau Eléve</h4></a>
                       <form class="form-horizontal style-form" method="get">
 
 <!-- éléve ************************************************************************************************ -->
                         <div class="tab-content">
-                          <div id="prof" class="tab-pane fade in active">
                             <h3>Eléves</h3>
                             <table class="table table-striped table-advance table-hover">
   	                  	  	  <hr>
@@ -35,49 +34,31 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>Boutat</td>
-                                    <td>Ayoub</td>
-                                    <td>12/3/2010</td>
-                                    <td>Garçon</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>Ramdan</td>
-                                    <td>Yasser</td>
-                                    <td>12/3/2006</td>
-                                    <td>Garçon</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>ELHAFIANE</td>
-                                    <td>Abdelmourhit</td>
-                                    <td>12/3/2011</td>
-                                    <td>Garçon</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                @foreach($eleves as $eleve)
+                                    <tr>
+                                        <td><a href="#">{{ $eleve->id }}</a></td>
+                                        <td>{{ $eleve->nom }}</td>
+                                        <td>{{ $eleve->prenom }}</td>
+                                        <td>{{ $eleve->date_naissance }}</td>
+
+                                        @if( $eleve->sexe == 0)
+                                            <td> Homme </td>
+                                        @elseif( $eleve->sexe == 1)
+                                            <td> Femme </td>
+                                        @endif
+                                        <td>
+                                            <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
                           </div>
 <!-- end éléve *************************************************************************-->
 
-                        </div>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->

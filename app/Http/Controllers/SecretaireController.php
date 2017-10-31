@@ -11,6 +11,9 @@ class SecretaireController extends Controller
     //lister
     public function index(){
 
+        $listeSecretaire = Secretaire::all();
+        return view('ListeSecretaire', ['secretaires' => $listeSecretaire]);
+
     }
 
     //affiche le formulaire
@@ -44,6 +47,8 @@ class SecretaireController extends Controller
         $secretaire->salaire = $request->input('salaire');
 
         $secretaire->save();
+        
+        return redirect('secretaires');
     }
 
     //récupérer les info dans le formulaire

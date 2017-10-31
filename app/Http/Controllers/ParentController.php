@@ -10,6 +10,9 @@ class ParentController extends Controller
     //lister
     public function index(){
 
+        $listePparent = Pparent::all();
+        return view('ListeParent', ['pparents' => $listePparent]);
+
     }
 
     //affiche le formulaire
@@ -42,6 +45,8 @@ class ParentController extends Controller
         $pparent->type_relation_parental = $request->input('type_relation_parental');
 
         $pparent->save();
+        
+        return redirect('pparents');
 
     }
 

@@ -11,6 +11,9 @@ class ProfController extends Controller
     //lister
     public function index(){
 
+        $listeProf = Prof::all();
+        return view('ListeProf', ['profs' => $listeProf]);
+
     }
 
     //affiche le formulaire
@@ -44,6 +47,8 @@ class ProfController extends Controller
         $prof->salaire = $request->input('salaire');
 
         $prof->save();
+
+        return redirect('profs');
     }
 
     //récupérer les info dans le formulaire

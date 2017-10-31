@@ -183,7 +183,9 @@
                     </a>
                     <ul class="sub">
                         <li><a  href="{{ url('profs/create') }}">Ajouter nouveau profil</a></li>
-                        <li><a  href="{{ url('ListeProfil') }}">la liste des profils</a></li>
+                        <li><a  href="{{ url('profs') }}">liste des profs</a></li>
+                        <li><a  href="{{ url('secretaires') }}">liste des Secretaires</a></li>
+                        <li><a  href="{{ url('sgs') }}">liste des Surveilants générals</a></li>
                     </ul>
                 </li>
 
@@ -194,8 +196,8 @@
                     </a>
                     <ul class="sub">
                         <li><a  href="{{url('eleves/create')}}">Inscription</a></li>
-                        <li><a  href="{{url('ListeEleve')}}">liste total</a></li>
-                        <li><a  href="{{url('ListeParent')}}">gestion des parent</a></li>
+                        <li><a  href="{{url('eleves')}}">liste total</a></li>
+                        <li><a  href="{{url('pparents')}}">gestion des parent</a></li>
                         <li><a  href="{{url('AffectationClasse')}}">affectation aux classes</a></li>
                     </ul>
                 </li>
