@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Prof;
+use Illuminate\Http\UploadedFile;
 
 class ProfController extends Controller
 {
@@ -29,7 +30,11 @@ class ProfController extends Controller
         $prof->email = $request->input('email');
         $prof->tel = $request->input('tel');
         $prof->fixe = $request->input('fixe');
-        $prof->photo = $request->input('photo');
+        
+        if($request->hasFile('photo')){
+        $prof->photo = $request->photo->store('image');
+        }
+        
         $prof->ville = $request->input('ville');
         $prof->type = 'prof';
         $prof->nationalite = $request->input('nationalite');

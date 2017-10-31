@@ -14,7 +14,7 @@ class VehiculeController extends Controller
 
     //affiche le formulaire
     public function create(){
-        return view('ListeVehicule');
+        return view('AjouterVehicule');
     }
 
     //enregistrer

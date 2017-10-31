@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -25,7 +26,7 @@
                         <div class="tab-content">
                           <div id="eleve" class="tab-pane fade in active">
                             <h3>Eléve</h3>
-                              <form class="form-horizontal style-form" action="{{ url('eleves') }}" method="post">
+                              <form class="form-horizontal style-form" enctype="multipart/form-data" action="{{ url('eleves') }}" method="post">
                               {{ csrf_field() }}
 
                               <div class="form-group">
@@ -118,7 +119,7 @@
 <!-- parent *************************************************************************-->
                           <div id="parent" class="tab-pane fade">
                             <h3>Parent</h3>
-                              <form class="form-horizontal style-form" action="{{ url('pparents') }}" method="post">
+                              <form class="form-horizontal style-form" enctype="multipart/form-data" action="{{ url('pparents') }}" method="post">
                                   {{ csrf_field() }}
                               <div class="form-group">
                                   <label class="col-sm-2 col-sm-2 control-label">Nom :</label>
@@ -138,17 +139,17 @@
                                       <input name="date_naissance" type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
                                   </div>
                               </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
-                                  <div class="col-sm-10">
-                                      <label class="radio-inline">
-                                          <input type="radio" name="optradio">Homme
-                                      </label>
-                                      <label class="radio-inline">
-                                          <input type="radio" name="optradio">Femme
-                                      </label>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
+                                      <div class="col-sm-10">
+                                          <label class="radio-inline">
+                                              <input name="sexe" type="radio" value=0>Homme
+                                          </label>
+                                          <label class="radio-inline">
+                                              <input name="sexe" type="radio" value=1>Femme
+                                          </label>
+                                      </div>
                                   </div>
-                              </div>
                               <div class="form-group">
                                   <label class="col-sm-2 col-sm-2 control-label">Adresse :</label>
                                   <div class="col-sm-10">
@@ -176,7 +177,7 @@
                               <div class="form-group">
                                   <label class="col-sm-2 col-sm-2 control-label">Photo :</label>
                                   <div class="col-sm-10">
-                                      <input name="tel" type="photo" class="form-control">
+                                      <input name="photo" type="file" class="form-control">
                                   </div>
                               </div>
                               <div class="form-group">

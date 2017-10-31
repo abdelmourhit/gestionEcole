@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Secretaire;
+use Illuminate\Http\UploadedFile;
 
 class SecretaireController extends Controller
 {
@@ -29,7 +30,11 @@ class SecretaireController extends Controller
         $secretaire->email = $request->input('email');
         $secretaire->tel = $request->input('tel');
         $secretaire->fixe = $request->input('fixe');
-        $secretaire->photo = $request->input('photo');
+
+        if($request->hasFile('photo')){
+            $secretaire->photo = $request->photo->store('image');
+        }
+        
         $secretaire->ville = $request->input('ville');
         $secretaire->type = 'secretaire';
         $secretaire->nationalite = $request->input('nationalite');
