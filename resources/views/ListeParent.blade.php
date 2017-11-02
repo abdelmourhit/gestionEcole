@@ -15,7 +15,7 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i></h4>
+                      <a href="{{ url('pparents/create') }}"><h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau Parent</h4></a>
                       <form class="form-horizontal style-form" method="get">
 
 <!-- Professeur ************************************************************************************************ -->
@@ -49,7 +49,7 @@
                                         @endif
                                         <td>
                                             <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                            <a class="btn btn-primary btn-xs" href="{{ url('pparents/'.$pparent->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                             <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                         </td>
                                     </tr>

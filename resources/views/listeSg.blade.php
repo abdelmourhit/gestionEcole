@@ -49,7 +49,7 @@
                                                 @endif
                                                 <td>
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <a class="btn btn-primary btn-xs" href="{{ url('sgs/'.$sg->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                 </td>
                                             </tr>
