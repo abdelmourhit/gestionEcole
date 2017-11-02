@@ -9,12 +9,13 @@ class VehiculeController extends Controller
 {
       //lister
     public function index(){
-
+          $ListeVehicule= Vehicule::all();
+        return view('AjouterVehicule', ['vehicules' => $ListeVehicule]);
     }
 
     //affiche le formulaire
     public function create(){
-        return view('ListeVehicule');
+        return view('AjouterVehicule');
     }
 
     //enregistrer
@@ -31,6 +32,7 @@ class VehiculeController extends Controller
        
 
         $vehicule->save();
+        return redirect('vehicules');
     }
 
     //récupérer les info dans le formulaire

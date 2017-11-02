@@ -25,11 +25,16 @@ Route::resource('secretaires','SecretaireController');
 Route::resource('eleves','EleveController');
 Route::resource('pparents','ParentController');
 
-Route::resource('classes','ClasseController');
-Route::resource('matieres','MatiereController');
-Route::resource('salles','SalleController');
-Route::resource('controles','ControleController');
-Route::resource('examens','ExamenController');
 
-Route::resource('chauffeurs','ChauffeurController');
-Route::resource('vehicules','VehiculeController');
+//yasser
+Route::resource('classes','ClasseController'); // index, create fait
+Route::resource('matieres','MatiereController');// index,create fait
+Route::resource('salles','SalleController');// index, create fait 
+Route::resource('controles','ControleController');// index, create fait
+Route::resource('examens','ExamenController');//index,create fait
+
+Route::resource('chauffeurs','ChauffeurController');// index,create fait
+Route::resource('vehicules','VehiculeController');// index,create fait
+
+Route::resource('activites','ActiviteController'); // index,create fait
+Route::resource('livres','LivreController');// index,create fait

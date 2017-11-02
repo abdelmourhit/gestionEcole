@@ -9,7 +9,8 @@ class ClasseController extends Controller
 {
      //lister
     public function index(){
-
+        $listeClasse = Classe::all();
+        return view('AjouterClasse', ['classes' => $listeClasse]);
     }
 
     //affiche le formulaire
@@ -26,6 +27,7 @@ class ClasseController extends Controller
        
 
         $classe->save();
+        return redirect('classes');
     }
 
     //récupérer les info dans le formulaire

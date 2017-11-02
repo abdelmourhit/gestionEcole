@@ -9,6 +9,8 @@ class ChauffeurController extends Controller
 {
     //lister
     public function index(){
+         $listeChauffeur= Chauffeur::all();
+        return view('AjouterChauffeur', ['chauffeurs' => $listeChauffeur]);
 
     }
 
@@ -36,6 +38,7 @@ class ChauffeurController extends Controller
        $chauffeur->vehicule = $request->input('vehicule');
 
         $chauffeur->save();
+        return redirect('chauffeurs');
     }
 
     //récupérer les info dans le formulaire

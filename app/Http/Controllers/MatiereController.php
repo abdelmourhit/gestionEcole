@@ -9,7 +9,8 @@ class MatiereController extends Controller
 {
      //lister
     public function index(){
-
+            $listeMatiere= Matiere::all();
+        return view('AjouterMatiere', ['matieres' => $listeMatiere]);
     }
 
     //affiche le formulaire
@@ -27,6 +28,7 @@ class MatiereController extends Controller
        
 
         $matiere->save();
+        return redirect('matieres');
     }
 
     //récupérer les info dans le formulaire

@@ -36,23 +36,51 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                 @foreach($vehicules as $vehicule)
-                                           <tr>
-                                                <td><a href="#">{{ $vehicule->id }}</a></td>
-                                                <td>{{ $vehicule->matricule }}</td>
-                                                <td>{{ $vehicule->type }}</td>
-                                                <td>{{ $vehicule->marque }}</td>
-                                                <td>{{ $vehicule->nbr_place }}</td>
-                                                <td>{{ $vehicule->carburant }}</td>
-                                                <td>{{ $vehicule->prix }}</td>
-                                                <td>{{ $vehicule->chauffeur }}</td>
-                                                <td>
-                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                <tr>
+                                    <td><a href="#">1</a></td>
+                                    <td> 12 A 12888</td>
+                                    <td> voiture</td>
+                                    <td> DACIA</td>
+                                    <td> 6</td>
+                                    <td> Diesel</td>
+                                    <td> 150 000</td>
+                                    <td> Bochaib</td>
+                                    <td>
+                                        <button class="btn btn-success btn-xs"><i class="fa fa-users"></i></button>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">2</a></td>
+                                    <td> 1 A 288</td>
+                                    <td> bus</td>
+                                    <td> Mercedes</td>
+                                    <td> 25</td>
+                                    <td> Diesel</td>
+                                    <td> 300 000</td>
+                                    <td> Bouchta</td>
+                                    <td>
+                                        <button class="btn btn-success btn-xs"><i class="fa fa-users"></i></button>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">3</a></td>
+                                    <td> 1 A 287</td>
+                                    <td> bus</td>
+                                    <td> Mercedes</td>
+                                    <td> 25</td>
+                                    <td> abdelah</td>
+                                    <td> Diesel</td>
+                                    <td> 300 000</td>
+                                    <td>
+                                        <button class="btn btn-success btn-xs"><i class="fa fa-users"></i></button>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
 

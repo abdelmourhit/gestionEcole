@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Eleve;
 
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Parent_;
+use Illuminate\Http\UploadedFile;
 
 class EleveController extends Controller
 {
     //lister
     public function index(){
+
+        $listeEleve = Eleve::all();
+        return view('ListeEleve', ['eleves' => $listeEleve]);
 
     }
 
@@ -31,7 +34,11 @@ class EleveController extends Controller
         $eleve->email = $request->input('email');
         $eleve->tel = $request->input('tel');
         $eleve->fixe = $request->input('fixe');
-        $eleve->photo = $request->input('photo');
+
+        if($request->hasFile('photo')){
+        $eleve->photo = $request->photo->store('image');
+        }
+
         $eleve->ville = $request->input('ville');
         $eleve->type = 'eleve';
         $eleve->nationalite = $request->input('nationalite');
@@ -39,7 +46,8 @@ class EleveController extends Controller
         $eleve->matricule = $request->input('matricule');
 
         $eleve->save();
-
+        
+        return redirect('eleves');
     }
 
     //récupérer les info dans le formulaire

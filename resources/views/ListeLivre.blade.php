@@ -28,44 +28,32 @@
                                     <th> ID</th>
                                     <th> Titre</th>
                                     <th> Auteur</th>
+                                    <th> Edition</th>
+                                    <th> Date Edition</th>
                                     <th> Type</th>
                                     <th> Quantité</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td> Dernier jour d'un condamné</td>
-                                    <td> Victor hugo</td>
-                                    <td> Roman</td>
-                                    <td> 10</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td> the Univers</td>
-                                    <td> Carle sagan</td>
-                                    <td> Sciences</td>
-                                    <td> 3</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td> Le joie</td>
-                                    <td> jean</td>
-                                    <td> Histoire</td>
-                                    <td> 8</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                 @foreach($livres as $livre)
+                                            <tr>
+                                                <td><a href="#">{{ $livre->id }}</a></td>
+                                                <td>{{ $livre->titre }}</td>
+                                                <td>{{ $livre->auteur }}</td>
+                                                <td>{{ $livre->edition }}</td>
+                                                <td>{{ $livre->date_edition }}</td>
+                                                <td>{{ $livre->type }}</td>
+                                                <td>{{ $livre->quantite }}</td>
+                                                
+
+                                                
+                                                <td>
+                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
 
@@ -84,36 +72,51 @@
               <div class="col-lg-12">
                   <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Ajouter un Livre</h4>
-                      <form class="form-horizontal style-form" method="get">
-
+                      <form class="form-horizontal style-form"  method="post" action="{{url('livres')}}">
+                        {{ csrf_field() }}
             <!-- éléve ************************************************************************************************ -->
 
                           <div id="eleve" class="tab-pane fade in active">
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Titre :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="titre">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Auteur :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="auteur">
                                 </div>
                             </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label"> Edition:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="edition">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Date Edition :</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" name="date_edition">
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Type :</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="type">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Quantité :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="quantite">
                                 </div>
                             </div>
-                              <button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
+                              <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                           </div>
             <!-- end éléve *************************************************************************-->
 

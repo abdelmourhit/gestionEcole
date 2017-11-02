@@ -9,19 +9,18 @@
 
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> La liste des parents</h3>
+          	<h3><i class="fa fa-angle-right"></i> La liste des éléves</h3>
 
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i></h4>
+                      <a href="{{ url('eleves/create') }}"><h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau Eléve</h4></a>
                       <form class="form-horizontal style-form" method="get">
 
-<!-- Professeur ************************************************************************************************ -->
+<!-- éléve ************************************************************************************************ -->
                         <div class="tab-content">
-                          <div id="prof" class="tab-pane fade in active">
-                            <h3>Parents</h3>
+                            <h3>Eléves</h3>
                             <table class="table table-striped table-advance table-hover">
   	                  	  	  <hr>
                                 <thead>
@@ -35,16 +34,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($pparents as $pparent)
+                                @foreach($eleves as $eleve)
                                     <tr>
-                                        <td><a href="#">{{ $pparent->id }}</a></td>
-                                        <td>{{ $pparent->nom }}</td>
-                                        <td>{{ $pparent->prenom }}</td>
-                                        <td>{{ $pparent->date_naissance }}</td>
+                                        <td><a href="#">{{ $eleve->id }}</a></td>
+                                        <td>{{ $eleve->nom }}</td>
+                                        <td>{{ $eleve->prenom }}</td>
+                                        <td>{{ $eleve->date_naissance }}</td>
 
-                                        @if( $pparent->sexe == 0)
+                                        @if( $eleve->sexe == 0)
                                             <td> Homme </td>
-                                        @elseif( $pparent->sexe == 1)
+                                        @elseif( $eleve->sexe == 1)
                                             <td> Femme </td>
                                         @endif
                                         <td>
@@ -58,9 +57,8 @@
                             </table>
 
                           </div>
-<!-- end Professeur *************************************************************************-->
+<!-- end éléve *************************************************************************-->
 
-                        </div>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->

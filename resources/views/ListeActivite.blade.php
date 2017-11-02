@@ -28,28 +28,48 @@
                                     <th> ID</th>
                                     <th> Libelle</th>
                                     <th> Description</th>
-                                    <th> Date de création</th>
+                                    <th> Date</th>
                                     <th> Nombre de place</th>
                                     
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                 @foreach($activites as $activite)
-                                            <tr>
-                                                <td><a href="#">{{ $activite->id }}</a></td>
-                                                <td>{{ $activite->libelle }}</td>
-                                                <td>{{ $activite->description }}</td>
-                                                <td>{{ $activite->date_creation }}</td>
-                                                <td>{{ $activite->nbr_place }}</td>
-
-                                              
-                                                <td>
-                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                <tr>
+                                    <td><a href="#">1</a></td>
+                                    <td>Ifrane</td>
+                                    <td>voyage organisé</td>
+                                    <td>12/12/2017</td>
+                                    <td>40</td>
+                                    
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">2</a></td>
+                                    <td>ZOO</td>
+                                    <td>Découvrire les animaux</td>
+                                    <td>1/4/2017</td>
+                                    <td>30</td>
+                                   
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">3</a></td>
+                                    <td>Agadir</td>
+                                    <td>Voyage organisé</td>
+                                    <td>1/6/2017</td>
+                                    <td>50</td>
+                                    
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
 

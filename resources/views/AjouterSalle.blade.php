@@ -38,36 +38,21 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>Salle 1</td>
-                                    <td>Moyenne</td>
-                                    <td>30</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>Salle 2</td>
-                                    <td>Grand</td>
-                                    <td>45</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>Salle 3</td>
-                                    <td>salle de conférance</td>
-                                    <td>50</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                @foreach($salles as $salle)
+                                           <tr>
+                                                <td><a href="#">{{ $salle->id }}</a></td>
+                                                <td>{{ $salle->libelle }}</td>
+                                                <td>{{ $salle->type }}</td>
+                                                <td>{{ $salle->nbr_eleve }}</td>
+                                                <td>{{ $salle->nbr_place }}</td>
+                                              
+                                                <td>
+                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
 

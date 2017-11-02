@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sg;
-
+use Illuminate\Http\UploadedFile;
 class SgController extends Controller
 {
     //lister
     public function index(){
 
+        $listeSg = Sg::all();
+        return view('ListeSg', ['sgs' => $listeSg]);
     }
 
     //affiche le formulaire
@@ -29,7 +31,11 @@ class SgController extends Controller
         $sg->email = $request->input('email');
         $sg->tel = $request->input('tel');
         $sg->fixe = $request->input('fixe');
-        $sg->photo = $request->input('photo');
+
+        if($request->hasFile('photo')){
+            $sg->photo = $request->photo->store('image');
+        }
+        
         $sg->ville = $request->input('ville');
         $sg->type = 'sg';
         $sg->nationalite = $request->input('nationalite');
@@ -39,6 +45,8 @@ class SgController extends Controller
         $sg->salaire = $request->input('salaire');
 
         $sg->save();
+        
+        return redirect('sgs');
     
     }
 

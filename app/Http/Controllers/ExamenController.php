@@ -9,12 +9,13 @@ class ExamenController extends Controller
 {
      //lister
     public function index(){
-
+        $listeExamen = Examen::all();
+        return view('Examen', ['examens' => $listeExamen]);
     }
 
     //affiche le formulaire
     public function create(){
-        return view('ControleExamen');
+        return view('Examen');
     }
 
     //enregistrer
@@ -31,6 +32,7 @@ class ExamenController extends Controller
        
 
         $examen->save();
+        return redirect('examens');
     }
 
     //récupérer les info dans le formulaire

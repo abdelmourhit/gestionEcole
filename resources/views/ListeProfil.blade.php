@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -9,13 +10,13 @@
 
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Ajouter nouveau profil</h3>
+          	<h3><i class="fa fa-angle-right"></i> La liste des profils</h3>
 
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau profil</h4>
+                  	  <a href="{{ url('profs/create') }}"><h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau profil</h4></a>
                       <form class="form-horizontal style-form" method="get">
                         <ul class="nav nav-tabs">
                           <li class="active"><a data-toggle="tab" href="#prof">Profeseur</a></li>
@@ -39,42 +40,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($profs as $prof)
                                 <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>Boutat</td>
-                                    <td>Ayoub</td>
-                                    <td>12/3/1985</td>
-                                    <td>Homme</td>
+                                    <td><a href="#">{{ $prof->id }}</a></td>
+                                    <td>{{ $prof->nom }}</td>
+                                    <td>{{ $prof->prenom }}</td>
+                                    <td>{{ $prof->date_naissance }}</td>
+
+                                    @if( $prof->sexe == 0)
+                                    <td> Homme </td>
+                                    @elseif( $prof->sexe == 1)
+                                        <td> Femme </td>
+                                    @endif
                                     <td>
                                         <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>Ramdan</td>
-                                    <td>Yasser</td>
-                                    <td>12/3/1992</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>ELHAFIANE</td>
-                                    <td>Abdelmourhit</td>
-                                    <td>12/3/1992</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
@@ -97,42 +81,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>Boutat</td>
-                                    <td>Ayoub</td>
-                                    <td>12/3/1985</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>Ramdan</td>
-                                    <td>Yasser</td>
-                                    <td>12/3/1992</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>ELHAFIANE</td>
-                                    <td>Abdelmourhit</td>
-                                    <td>12/3/1992</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                @foreach($secretaires as $secretaire)
+                                    <tr>
+                                        <td><a href="#">{{ $secretaire->id }}</a></td>
+                                        <td>{{ $secretaire->nom }}</td>
+                                        <td>{{ $secretaire->prenom }}</td>
+                                        <td>{{ $secretaire->date_naissance }}</td>
+
+                                        @if( $secretaire->sexe == 0)
+                                            <td> Homme </td>
+                                        @elseif( $secretaire->sexe == 1)
+                                            <td> Femme </td>
+                                        @endif
+                                        <td>
+                                            <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
@@ -155,42 +122,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>Boutat</td>
-                                    <td>Ayoub</td>
-                                    <td>12/3/1985</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>Ramdan</td>
-                                    <td>Yasser</td>
-                                    <td>12/3/1992</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>ELHAFIANE</td>
-                                    <td>Abdelmourhit</td>
-                                    <td>12/3/1992</td>
-                                    <td>Homme</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                @foreach($sgs as $sg)
+                                    <tr>
+                                        <td><a href="#">{{ $sg->id }}</a></td>
+                                        <td>{{ $sg->nom }}</td>
+                                        <td>{{ $sg->prenom }}</td>
+                                        <td>{{ $sg->date_naissance }}</td>
+
+                                        @if( $sg->sexe == 0)
+                                            <td> Homme </td>
+                                        @elseif( $sg->sexe == 1)
+                                            <td> Femme </td>
+                                        @endif
+                                        <td>
+                                            <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 

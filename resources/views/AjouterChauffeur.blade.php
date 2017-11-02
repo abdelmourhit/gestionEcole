@@ -34,47 +34,28 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td> Narouze</td>
-                                    <td> Abdelah</td>
-                                    <td> Homme</td>
-                                    <td> B,C</td>
-                                    <td> Mercedes</td>
-                                    <td>
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                  <td><a href="#">2</a></td>
-                                    <td> Narouze</td>
-                                    <td> Abdelah</td>
-                                    <td> Homme</td>
-                                    <td> B,C</td>
-                                    <td> Mercedes</td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td><a href="#">1</a></td>
-                                    <td> Narouze</td>
-                                    <td> Abdelah</td>
-                                    <td> Homme</td>
-                                   
-                                    <td> B,C</td>
-                                    <td> Mercedes</td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                                </tr>
-                                </tbody>
+                               @foreach($chauffeurs as $chauffeur)
+                                            <tr>
+                                                <td><a href="#">{{ $chauffeur->id }}</a></td>
+                                                <td>{{ $chauffeur->nom }}</td>
+                                                <td>{{ $chauffeur->prenom }}</td>
+                                                
+
+                                                @if( $chauffeur->sexe == 0)
+                                                    <td> Homme </td>
+                                                @elseif( $chauffeur->sexe == 1)
+                                                    <td> Femme </td>
+                                                @endif
+
+                                                <td>{{ $chauffeur->type_permis }}</td>
+                                                <td>{{ $chauffeur->vehicule }}</td>
+                                                <td>
+                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                             </table>
 
                           </div>

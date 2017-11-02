@@ -33,36 +33,23 @@
                                     <th> ID</th>
                                     <th> libelle</th>
                                     <th> Description</th>
-                                    <th></th>
+                                    <th> Actions</th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>C1</td>
-                                    <td>Classe 1</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>C2</td>
-                                    <td>Classe 2</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>C3</td>
-                                    <td>Classe 3</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                <tbody>
+                                        @foreach($classes as $classe)
+                                            <tr>
+                                                <td><a href="#">{{ $classe->id }}</a></td>
+                                                <td>{{ $classe->libelle }}</td>
+                                                <td>{{ $classe->description }}</td>
+                                                <td>
+                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
                                 </tbody>
                             </table>
 

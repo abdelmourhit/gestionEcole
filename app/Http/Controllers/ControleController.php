@@ -9,12 +9,13 @@ class ControleController extends Controller
 {
    //lister
     public function index(){
-
+         $listeControle = Controle::all();
+        return view('Controle', ['controles' => $listeControle]);
     }
 
     //affiche le formulaire
     public function create(){
-        return view('ControleExamen');
+        return view('Controle');
     }
 
     //enregistrer
@@ -31,6 +32,7 @@ class ControleController extends Controller
        
 
         $controle->save();
+        return redirect('controles');
     }
 
     //récupérer les info dans le formulaire

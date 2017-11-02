@@ -9,7 +9,8 @@ class SalleController extends Controller
 {
      //lister
     public function index(){
-
+        $ListeSalle= Salle::all();
+        return view('AjouterSalle', ['salles' => $ListeSalle]);
     }
 
     //affiche le formulaire
@@ -26,6 +27,7 @@ class SalleController extends Controller
         $salle->nbr_eleve = $request->input('nbreleve');
 
         $salle->save();
+        return redirect('salles');
         
     }
 

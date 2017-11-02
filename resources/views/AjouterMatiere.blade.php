@@ -37,36 +37,19 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>Français</td>
-                                    <td></td>
-                                    <td>C5</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td></td>
-                                    <td>العربية</td>
-                                    <td>C1</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>Math</td>
-                                    <td></td>
-                                    <td>C3</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                </tr>
+                                  @foreach($matieres as $matiere)
+                                           <tr>
+                                                <td><a href="#">{{ $matiere->id }}</a></td>
+                                                <td>{{ $matiere->nom }}</td>
+                                                <td>{{ $matiere->nom_arab }}</td>
+                                                <td>{{ $matiere->classe }}</td>
+                                                <td>
+                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
 

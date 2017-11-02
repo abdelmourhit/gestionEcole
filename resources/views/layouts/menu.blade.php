@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,10 @@
 
     <title>Gestion d'école</title>
 
-    <link rel="stylesheet" href="{{asset("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css")}}" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset("assets/css/bootstrap.css")}}" rel="stylesheet">
@@ -165,10 +166,10 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
 
-                <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                <p class="centered"><a href=""><img src="{{ asset("assets/img/ui-sam.jpg") }}" class="img-circle" width="60"></a></p>
                 <h5 class="centered">Mr. Directeur</h5>
 
-                <li class="mt">
+                <li class="sub-menu">
                     <a class="active" href="{{ url('index') }}">
                         <i class="fa fa-dashboard"></i>
                         <span>Tableau de bord</span>
@@ -176,13 +177,15 @@
                 </li>
 
                 <li class="sub-menu">
-                    <a href="javascript:;" >
+                    <a href="javascript:;">
                         <i class="fa fa-user"></i>
                         <span>Gestion des profils</span>
                     </a>
                     <ul class="sub">
                         <li><a  href="{{ url('profs/create') }}">Ajouter nouveau profil</a></li>
-                        <li><a  href="{{ url('ListeProfil') }}">la liste des profils</a></li>
+                        <li><a  href="{{ url('profs') }}">liste des profs</a></li>
+                        <li><a  href="{{ url('secretaires') }}">liste des Secretaires</a></li>
+                        <li><a  href="{{ url('sgs') }}">liste des Surveilants générals</a></li>
                     </ul>
                 </li>
 
@@ -193,23 +196,24 @@
                     </a>
                     <ul class="sub">
                         <li><a  href="{{url('eleves/create')}}">Inscription</a></li>
-                        <li><a  href="{{url('ListeEleve')}}">liste total</a></li>
-                        <li><a  href="{{url('ListeParent')}}">gestion des parent</a></li>
+                        <li><a  href="{{url('eleves')}}">liste total</a></li>
+                        <li><a  href="{{url('pparents')}}">gestion des parent</a></li>
                         <li><a  href="{{url('AffectationClasse')}}">affectation aux classes</a></li>
                     </ul>
                 </li>
 
                 <li class="sub-menu">
-                    <a href="javascript:;" >
+                    <a href="javascript:;">
                         <i class=" fa fa-th"></i>
                         <span>Cours</span>
                     </a>
                     <ul class="sub">
                         <li><a  href="{{url('matieres/create')}}">Matières</a></li>
-                        <li><a  href="{{url('classes/create')}}">Classes</a></li>
-                        <li><a  href="{{url('salles/create')}}">Salle</a></li>
+                        <li><a  href="{{url('classes')}}">Classes</a></li>
+                        <li><a  href="{{url('salles')}}">Salle</a></li>
                         <li><a  href="#">Notes</a></li>
-                        <li><a  href="{{url('ControleExamen')}}">Contrôles et exameans</a></li>
+                        <li><a  href="{{url('controles')}}">Contrôles</a></li>
+                        <li><a  href="{{url('examens')}}">Examens</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -241,8 +245,8 @@
                         <span>Transport</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{url('ListeVehicule')}}">Gestion des véhicules</a></li>
-                        <li><a  href="{{url('ListeChauffeur')}}">Gestion des chauffeurs</a></li>
+                        <li><a  href="{{url('vehicules')}}">Gestion des véhicules</a></li>
+                        <li><a  href="{{url('chauffeurs')}}">Gestion des chauffeurs</a></li>
                         <li><a  href="{{url('AffectationChauffeur')}}">Affectation véhicules/chauffeurs</a></li>
                         <li><a  href="{{url('AffectationEleve')}}">Affectation véhicules/éléves</a></li>
                     </ul>
@@ -265,7 +269,7 @@
                         <span>Activité</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{url('ListeActivite')}}">Liste des activités</a></li>
+                        <li><a  href="{{url('activites')}}">Liste des activités</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -274,7 +278,7 @@
                         <span>Bibliothéque</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{url('ListeLivre')}}">la liste des livres</a></li>
+                        <li><a  href="{{url('livres')}}">la liste des livres</a></li>
                     </ul>
                 </li>
 
@@ -289,8 +293,8 @@
 
     <footer class="site-footer">
         <div class="text-center">
-            2014 - Alvarez.is
-            <a href="index.html#" class="go-top">
+            2018 - Gestion d'école
+            <a href="#" class="go-top">
                 <i class="fa fa-angle-up"></i>
             </a>
         </div>

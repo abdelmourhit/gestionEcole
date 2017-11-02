@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pparent;
-
+use Illuminate\Http\UploadedFile;
 class ParentController extends Controller
 {
     //lister
     public function index(){
+
+        $listePparent = Pparent::all();
+        return view('ListeParent', ['pparents' => $listePparent]);
 
     }
 
@@ -29,7 +32,11 @@ class ParentController extends Controller
         $pparent->email = $request->input('email');
         $pparent->tel = $request->input('tel');
         $pparent->fixe = $request->input('fixe');
-        $pparent->photo = $request->input('photo');
+
+        if($request->hasFile('photo')){
+            $pparent->photo = $request->photo->store('image');
+        }
+        
         $pparent->ville = $request->input('ville');
         $pparent->type = 'parent';
         $pparent->nationalite = $request->input('nationalite');
@@ -38,6 +45,8 @@ class ParentController extends Controller
         $pparent->type_relation_parental = $request->input('type_relation_parental');
 
         $pparent->save();
+        
+        return redirect('pparents');
 
     }
 
