@@ -93,7 +93,12 @@ class SecretaireController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
 
+        $secretaire = Secretaire::find($id);
+
+        $secretaire->delete();
+
+        return redirect('secretaires');
     }
 }

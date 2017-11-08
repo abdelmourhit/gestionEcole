@@ -49,9 +49,17 @@
                                                     <td> Femme </td>
                                                 @endif
                                                 <td>
-                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <a class="btn btn-primary btn-xs" href="{{ url('profs/'.$prof->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
-                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+
+                                                    <form action="{{ url('profs/'.$prof->id) }}" method="post">
+
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+
+                                                        <a class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+                                                        <a class="btn btn-primary btn-xs" href="{{ url('profs/'.$prof->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
+                                                        <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                    </form>
+
                                                 </td>
                                             </tr>
                                         @endforeach

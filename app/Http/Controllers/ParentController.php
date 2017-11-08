@@ -91,7 +91,12 @@ class ParentController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
 
+        $pparent = Pparent::find($id);
+
+        $pparent->delete();
+
+        return redirect('pparents');
     }
 }

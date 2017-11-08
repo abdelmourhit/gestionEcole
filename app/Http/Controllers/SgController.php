@@ -92,7 +92,12 @@ class SgController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
 
+        $sg = Sg::find($id);
+
+        $sg->delete();
+
+        return redirect('sgs');
     }
 }

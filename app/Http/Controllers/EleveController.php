@@ -90,7 +90,12 @@ class EleveController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
 
+        $eleve = Eleve::find($id);
+
+        $eleve->delete();
+
+        return redirect('eleves');
     }
 }

@@ -93,7 +93,12 @@ class ProfController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy($id){
+        
+        $prof = Prof::find($id);
 
+        $prof->delete();
+        
+        return redirect('profs');
     }
 }
