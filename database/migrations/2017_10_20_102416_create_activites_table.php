@@ -18,7 +18,10 @@ class CreateActivitesTable extends Migration
             $table->string('libelle',100)->nullable();
             $table->string('description')->nullable();
             $table->date('date_creation')->nullable();
+            $table->date('date_depart')->nullable();
+            $table->string('duree')->nullable();
             $table->integer('nbr_place')->nullable();
+
             $table->timestamps();
         });
     }

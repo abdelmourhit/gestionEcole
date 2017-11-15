@@ -28,10 +28,13 @@
                                     <th> ID</th>
                                     <th> Titre</th>
                                     <th> Auteur</th>
+                                    <th> Description</th>
                                     <th> Edition</th>
                                     <th> Date Edition</th>
-                                    <th> Type</th>
+                                    <th> prix</th>
                                     <th> Quantité</th>
+                                    <th> Type</th>
+                                    
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -39,17 +42,20 @@
                                             <tr>
                                                 <td><a href="#">{{ $livre->id }}</a></td>
                                                 <td>{{ $livre->titre }}</td>
-                                                <td>{{ $livre->auteur }}</td>
+                                                <td>{{ $livre->autheur }}</td>
+                                                <td>{{ $livre->description }}</td>
                                                 <td>{{ $livre->edition }}</td>
                                                 <td>{{ $livre->date_edition }}</td>
-                                                <td>{{ $livre->type }}</td>
+                                                <td>{{ $livre->prix }}</td>
                                                 <td>{{ $livre->quantite }}</td>
+                                                <td>{{ $livre->type }}</td>
+                                                
                                                 
 
                                                 
                                                 <td>
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <a class="btn btn-primary btn-xs" href="{{ url('livres/'.$livre->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                 </td>
                                             </tr>
@@ -84,14 +90,21 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Auteur :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Autheur :</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="auteur">
+                                    <input type="text" class="form-control" name="autheur">
+                                </div>
+                            </div>
+
+                              <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label"> Description :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="description">
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label"> Edition:</label>
+                                <label class="col-sm-2 col-sm-2 control-label"> Edition :</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="edition">
                                 </div>
@@ -105,17 +118,26 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Type :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Prix :</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="type">
+                                  <input type="text" class="form-control" name="prix">
                                 </div>
                             </div>
-                            <div class="form-group">
+
+                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Quantité :</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="quantite">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Type :</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="type">
+                                </div>
+                            </div>
+                           
                               <button type="submit" class="btn btn-theme02"><i class="fa fa-check"></i> Enregistrer </button>
                           </div>
             <!-- end éléve *************************************************************************-->

@@ -45,10 +45,10 @@
                                                 <td>{{ $vehicule->nbr_place }}</td>
                                                 <td>{{ $vehicule->carburant }}</td>
                                                 <td>{{ $vehicule->prix }}</td>
-                                                <td>{{ $vehicule->chauffeur }}</td>
+                                                <td>{{ $vehicule->chauffeur }} </td>
                                                 <td>
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <a class="btn btn-primary btn-xs" href="{{ url('vehicules/'.$vehicule->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                 </td>
                                             </tr>
@@ -118,9 +118,10 @@
                                 <label class="col-sm-2 col-sm-2 control-label">Chauffeur :</label>
                                 <div class="col-sm-10">
                                   <select class="form-control" name="chauffeur">
-                                    <option>Abdelah</option>
-                                    <option>Bochaib</option>
-                                    <option>Bouchta</option>
+                                    <option value="" hidden>Choisir un chauffeur</option>
+                                    @foreach($chauffeurs as $chauffeur)
+                                    <option value="{{$chauffeur->nom}}">{{$chauffeur->nom}} {{$chauffeur->prenom}}</option>
+                                    @endforeach
                                   </select>
                                 </div>
                             </div>

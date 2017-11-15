@@ -23,22 +23,39 @@ class LivreController extends Controller
 
         $livre = new livre();
         $livre->titre = $request->input('titre');
-        $livre->auteur = $request->input('auteur');
+        $livre->autheur = $request->input('autheur');
+        $livre->description = $request->input('description');
         $livre->edition = $request->input('edition');
         $livre->date_edition = $request->input('date_edition');
-        $livre->type = $request->input('type');
+        $livre->prix = $request->input('prix');
         $livre->quantite = $request->input('quantite');
+        $livre->type = $request->input('type');
         $livre->save();
         return redirect('livres');
     }
 
     //récupérer les info dans le formulaire
-    public function edit(){
+    public function edit($id){
+        $livre = Livre::find($id);
+        return view('editLivre', ['livre' => $livre]);
 
     }
 
     //modifer
-    public function update(){
+    public function update(Request $request, $id){
+        $livre = Livre::find($id);
+
+        $livre->titre = $request->input('titre');
+        $livre->autheur = $request->input('autheur');
+        $livre->description = $request->input('description');
+        $livre->edition = $request->input('edition');
+        $livre->date_edition = $request->input('date_edition');
+        $livre->prix = $request->input('prix');
+        $livre->quantite = $request->input('quantite');
+        $livre->type = $request->input('type');
+        $livre->save();
+        return redirect('livres');
+
 
     }
 

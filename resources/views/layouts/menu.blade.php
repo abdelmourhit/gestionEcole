@@ -208,7 +208,7 @@
                         <span>Cours</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{url('matieres/create')}}">Matières</a></li>
+                        <li><a  href="{{url('matieres')}}">Matières</a></li>
                         <li><a  href="{{url('classes')}}">Classes</a></li>
                         <li><a  href="{{url('salles')}}">Salle</a></li>
                         <li><a  href="#">Notes</a></li>

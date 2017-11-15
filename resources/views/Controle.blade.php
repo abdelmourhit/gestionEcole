@@ -56,7 +56,7 @@
                                                 
                                                 <td>
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <a class="btn btn-primary btn-xs" href="{{ url('controles/'.$controle->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                 </td>
                                             </tr>
@@ -102,9 +102,9 @@
                                       <label class="col-sm-2 col-sm-2 control-label">Matiére :</label>
                                       <div class="col-sm-10">
                                         <select class="form-control" name="matiere">
-                                          <option>Français</option>
-                                          <option>العربية</option>
-                                          <option>Math</option>
+                                          @foreach($matieres as $matiere)
+                                            <option value="{{$matiere->nom}}"> {{$matiere->nom}}</option>
+                                          @endforeach
                                         </select>
                                       </div>
                                   </div>
@@ -112,9 +112,9 @@
                                       <label class="col-sm-2 col-sm-2 control-label">Professeur :</label>
                                       <div class="col-sm-10">
                                         <select class="form-control" name="prof">
-                                          <option>Ayoub</option>
-                                          <option>Yasser</option>
-                                          <option>Abdelmourhit</option>
+                                          @foreach($profs as $prof)
+                                            <option value="">{{$prof->nom}} {{$prof->prenom}}</option>
+                                          @endforeach
                                         </select>
                                       </div>
                                   </div>
@@ -122,9 +122,9 @@
                                       <label class="col-sm-2 col-sm-2 control-label">Classe :</label>
                                       <div class="col-sm-10">
                                         <select class="form-control" name="classe">
-                                          <option>C1</option>
-                                          <option>C2</option>
-                                          <option>C3</option>
+                                         @foreach($classes as $classe)
+                                          <option value="">{{$classe->libelle}}</option>
+                                         @endforeach
                                         </select>
                                       </div>
                                   </div>

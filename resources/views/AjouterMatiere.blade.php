@@ -6,7 +6,8 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-
+<form class="form-horizontal style-form" method="get">
+    
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Ajouter une nouvelle Matière</h3>
@@ -33,7 +34,7 @@
                                     <th> ID</th>
                                     <th> Nom</th>
                                     <th> Nom Arabe</th>
-                                    <th> la classe</th>
+                                    <th> Niveau</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -44,9 +45,13 @@
                                                 <td>{{ $matiere->nom_arab }}</td>
                                                 <td>{{ $matiere->classe }}</td>
                                                 <td>
-                                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                  <form method="post" action="{{url('matieres/'.$matiere->id)}}">
+                                                  {{ csrf_field() }}
+                                                  {{ method_field('DELETE') }}
+                                                    <a href="" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+                                                   <a class="btn btn-primary btn-xs" href="{{ url('matieres/'.$matiere->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
+                                                    <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                  </form>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -54,6 +59,7 @@
                             </table>
 
                           </div>
+                        </form>
                         <!-- end liste matière -->
 <!-- matière ************************************************************************************************ -->
                 <form class="form-horizontal style-form" method="post" action="{{url('matieres')}}">
@@ -75,13 +81,23 @@
                                 </div>
                             </div>
 
-                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Classe :</label>
+                             <!--<div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Niveau :</label>
                                 <div class="col-sm-10">
                                   <select class="form-control" name="classe">
                                     <option>C1</option>
                                     <option>C2</option>
                                     <option>C3</option>
+                                  </select>
+                                </div>
+                            </div>-->
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Niveau :</label>
+                                <div class="col-sm-10">
+                                  <select class="form-control" name="classe">
+                                    @foreach($classes as $classe)
+                                        <option value="{{ $classe->libelle }}"> {{$classe->libelle}}</option>
+                                    @endforeach
                                   </select>
                                 </div>
                             </div>

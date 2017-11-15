@@ -31,12 +31,22 @@ class ClasseController extends Controller
     }
 
     //récupérer les info dans le formulaire
-    public function edit(){
+    public function edit($id){
+        $classe = Classe::find($id);
+        return view('editClasse',['classe' => $classe]);
 
     }
 
     //modifer
-    public function update(){
+    public function update(Request $request, $id){
+        $classe = Classe::find($id);
+
+        $classe->libelle=$request->input('libelle');
+        $classe->description=$request->input('description');
+
+        $classe->save();
+
+        return redirect('classes');
 
     }
 

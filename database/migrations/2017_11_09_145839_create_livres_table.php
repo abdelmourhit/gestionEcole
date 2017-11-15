@@ -15,14 +15,14 @@ class CreateLivresTable extends Migration
     {
         Schema::create('livres', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre',100)->nullable();
-            $table->string('auteur',100)->nullable();
-            $table->string('edition',100)->nullable();
+            $table->string('titre')->nullable();
+            $table->string('autheur')->nullable();
+            $table->string('description')->nullable();
+            $table->string('edition')->nullable();
             $table->date('date_edition')->nullable();
-            $table->string('type',100)->nullable();
+            $table->float('prix')->nullable();
             $table->integer('quantite')->nullable();
-           // $table->binary('image')->nullable();
-
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

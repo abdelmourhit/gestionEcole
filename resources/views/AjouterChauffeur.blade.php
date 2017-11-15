@@ -47,11 +47,11 @@
                                                     <td> Femme </td>
                                                 @endif
 
-                                                <td>{{ $chauffeur->type_permis }}</td>
+                                                <td>{{ $chauffeur->type_permi }}</td>
                                                 <td>{{ $chauffeur->vehicule }}</td>
                                                 <td>
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <a class="btn btn-primary btn-xs" href="{{ url('chauffeurs/'.$chauffeur->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                 </td>
                                             </tr>
@@ -171,9 +171,9 @@
                                 <label class="col-sm-2 col-sm-2 control-label">Véhicule :</label>
                                 <div class="col-sm-10">
                                   <select class="form-control" name="vehicule">
-                                    <option>Mercedes</option>
-                                    <option>Ford</option>
-                                    <option>Ford 2</option>
+                                    @foreach($vehicules as $vehicule)
+                                    <option value="">{{$vehicule->marque}}</option>
+                                    @endforeach
                                   </select>
                                 </div>
                             </div>

@@ -29,7 +29,10 @@
                                     <th> Libelle</th>
                                     <th> Description</th>
                                     <th> Date de création</th>
+                                    <th> Date de départ</th>
+                                    <th> Durée</th>
                                     <th> Nombre de place</th>
+                                    <th> Action</th>
                                     
                                     <th></th>
                                 </thead>
@@ -40,12 +43,14 @@
                                                 <td>{{ $activite->libelle }}</td>
                                                 <td>{{ $activite->description }}</td>
                                                 <td>{{ $activite->date_creation }}</td>
+                                                <td>{{ $activite->date_depart }}</td>
+                                                <td>{{ $activite->duree }}</td>
                                                 <td>{{ $activite->nbr_place }}</td>
 
                                               
                                                 <td>
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                    <a class="btn btn-primary btn-xs" href="{{ url('activites/'.$activite->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                 </td>
                                             </tr>
@@ -86,9 +91,21 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Date :</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Date de création:</label>
                                 <div class="col-sm-10">
                                   <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth" name="date_creation">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Date de départ:</label>
+                                <div class="col-sm-10">
+                                  <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth" name="date_depart">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Durée :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="duree">
                                 </div>
                             </div>
                             <div class="form-group">

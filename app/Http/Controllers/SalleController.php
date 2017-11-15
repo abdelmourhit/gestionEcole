@@ -32,13 +32,25 @@ class SalleController extends Controller
     }
 
     //récupérer les info dans le formulaire
-    public function edit(){
+    public function edit($id){
 
+        $salle = Salle::find($id);
+
+        return view('editSalle', ['salle' => $salle]);
     }
 
     //modifer
-    public function update(){
+    public function update(Request $request, $id){
+        $salle = Salle::find($id);
 
+        $salle->libelle= $request->input('libelle');
+        $salle->type = $request->input('type');
+        $salle->nbr_eleve = $request->input('nbr_eleve');
+       
+
+        $salle->save();
+
+        return redirect('salles');
     }
 
     //supprimer

@@ -24,18 +24,33 @@ class ActiviteController extends Controller
         $activite->libelle = $request->input('libelle');
         $activite->description = $request->input('description');
         $activite->date_creation = $request->input('date_creation');
+        $activite->date_depart = $request->input('date_depart');
+        $activite->duree = $request->input('duree');
         $activite->nbr_place = $request->input('nbr_place');
         $activite->save();
         return redirect('activites');
     }
 
     //récupérer les info dans le formulaire
-    public function edit(){
+    public function edit($id){
+        $activite = Activite::find($id);
+        return view('editActivite',['activite' => $activite]);
 
     }
 
     //modifer
-    public function update(){
+    public function update(Request $request,$id){
+        $activite = Activite::find($id);
+
+        $activite->libelle = $request->input('libelle');
+        $activite->description = $request->input('description');
+        $activite->date_creation = $request->input('date_creation');
+        $activite->date_depart = $request->input('date_depart');
+        $activite->duree = $request->input('duree');
+        $activite->nbr_place = $request->input('nbr_place');
+        $activite->save();
+        return redirect('activites');
+
 
     }
 

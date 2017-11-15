@@ -27,14 +27,14 @@ Route::resource('pparents','ParentController');
 
 
 //yasser
-Route::resource('classes','ClasseController'); // index, create fait
-Route::resource('matieres','MatiereController');// index,create fait
-Route::resource('salles','SalleController');// index, create fait 
-Route::resource('controles','ControleController');// index, create fait
-Route::resource('examens','ExamenController');//index,create fait
+Route::resource('classes','ClasseController'); // index, create edit, update fait
+Route::resource('matieres','MatiereController');// index,create edit, update, destroy fait
+Route::resource('salles','SalleController');// index ,create , edit, update fait 
+Route::resource('controles','ControleController');// index, create, edit, update fait 
+Route::resource('examens','ExamenController');//index,create, edit, update fait
 
-Route::resource('chauffeurs','ChauffeurController');// index,create fait
-Route::resource('vehicules','VehiculeController');// index,create fait
+Route::resource('chauffeurs','ChauffeurController');// index,create edit,update fait
+Route::resource('vehicules','VehiculeController');// index,create edit,update fait
 
-Route::resource('activites','ActiviteController'); // index,create fait
+Route::resource('activites','ActiviteController'); // index,create edit,update fait
 Route::resource('livres','LivreController');// index,create fait
