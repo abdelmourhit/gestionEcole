@@ -3,25 +3,25 @@
 @section('content')
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
+    <!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+    <!--main content start-->
 
-      <section id="main-content">
-          <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Ajouter nouveau profil</h3>
+    <section id="main-content">
+        <section class="wrapper">
+            <h3><i class="fa fa-angle-right"></i> Ajouter nouveau profil</h3>
 
-          	<!-- BASIC FORM ELELEMNTS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                  <div class="form-panel">
+            <!-- BASIC FORM ELELEMNTS -->
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <div class="form-panel">
 
-<!-- Professeur ************************************************************************************************ -->
+
+                            <!-- SG *************************************************************************-->
                         <div class="tab-content">
-
-                            <h3>Professeur</h3>
-                              <form class="form-horizontal style-form" enctype="multipart/form-data" action="{{ url('profs') }}" method="post">
+                                <h3>Surveillant général</h3>
+                                <form class="form-horizontal style-form" enctype="multipart/form-data" action="{{ url('sgs') }}" method="post">
 
                                     {{ csrf_field() }}
 
@@ -43,17 +43,17 @@
                                             <input name="date_naissance" type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
                                         </div>
                                     </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
-                                      <div class="col-sm-10">
-                                          <label class="radio-inline">
-                                              <input name="sexe" type="radio" value=0 checked="checked">Homme
-                                          </label>
-                                          <label class="radio-inline">
-                                              <input name="sexe" type="radio" value=1>Femme
-                                          </label>
-                                      </div>
-                                  </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
+                                        <div class="col-sm-10">
+                                            <label class="radio-inline">
+                                                <input name="sexe" type="radio" value=0 checked="checked">Homme
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input name="sexe" type="radio" value=1>Femme
+                                            </label>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 col-sm-2 control-label">Adresse :</label>
                                         <div class="col-sm-10">
@@ -72,30 +72,30 @@
                                             <input name="tel" type="text" class="form-control">
                                         </div>
                                     </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Fixe :</label>
-                                      <div class="col-sm-10">
-                                          <input name="fixe" type="text" class="form-control">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Photo :</label>
-                                      <div class="col-sm-10">
-                                          <input name="photo" type="file" class="form-control">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Ville :</label>
-                                      <div class="col-sm-10">
-                                          <input name="ville" type="text" class="form-control">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Nationalité :</label>
-                                      <div class="col-sm-10">
-                                          <input name="nationalite" type="text" class="form-control">
-                                      </div>
-                                  </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Fixe :</label>
+                                        <div class="col-sm-10">
+                                            <input name="fixe" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Photo :</label>
+                                        <div class="col-sm-10">
+                                            <input name="photo" type="file" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Ville :</label>
+                                        <div class="col-sm-10">
+                                            <input name="ville" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Nationalité :</label>
+                                        <div class="col-sm-10">
+                                            <input name="nationalite" type="text" class="form-control">
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 col-sm-2 control-label">CIN :</label>
                                         <div class="col-sm-10">
@@ -111,23 +111,23 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 col-sm-2 control-label">Salaire :</label>
                                         <div class="col-sm-10">
-                                          <input name="salaire" type="text" class="form-control" id="exampleInputDOB1">
+                                            <input name="salaire" type="text" class="form-control" id="exampleInputDOB1">
                                         </div>
                                     </div>
 
                                     <input type="submit" class="btn btn-theme02" value="Enregistrer">
                                 </form>
                         </div>
-<!-- end Professeur *************************************************************************-->
+                            <!-- end SG *************************************************************************-->
 
-                  </div>
-          		</div><!-- col-lg-12-->
-          	</div><!-- /row -->
+                    </div>
+                </div><!-- col-lg-12-->
+            </div><!-- /row -->
 
 
 
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
 
 
 
@@ -149,9 +149,9 @@
 
     <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>
-	<script src="assets/js/zabuto_calendar.js"></script>
+    <script src="assets/js/zabuto_calendar.js"></script>
 
-	<script type="application/javascript">
+    <script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();

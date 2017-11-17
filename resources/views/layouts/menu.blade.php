@@ -182,7 +182,7 @@
                         <span>Gestion des profils</span>
                     </a>
                     <ul class="sub">
-                        <li><a  href="{{ url('profs/create') }}">Ajouter nouveau profil</a></li>
+                        <li><a  href="{{ url('profil') }}">Ajouter nouveau profil</a></li>
                         <li><a  href="{{ url('profs') }}">liste des profs</a></li>
                         <li><a  href="{{ url('secretaires') }}">liste des Secretaires</a></li>
                         <li><a  href="{{ url('sgs') }}">liste des Surveilants générals</a></li>

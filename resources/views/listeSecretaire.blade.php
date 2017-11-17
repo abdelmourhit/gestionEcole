@@ -16,7 +16,7 @@
             <div class="row mt">
                 <div class="col-lg-12">
                     <div class="form-panel">
-                        <a href="{{ url('profs/create') }}"><h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau profil</h4></a>
+                        <a href="{{ url('secretaires/create') }}"><h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau profil</h4></a>
                         <form class="form-horizontal style-form" method="get">
 
                             <!-- Secretaire ************************************************************************************************ -->

@@ -18,7 +18,7 @@ class SecretaireController extends Controller
 
     //affiche le formulaire
     public function create(){
-        return view('AjouterProfil');
+        return view('AjouterSecretaire');
     }
 
     //enregistrer

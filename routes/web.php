@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/index', 'IndexController@index')->name('index');
 
+Route::get('/profil', function(){
+    return view('AjouterProfils');
+});
+
 Route::resource('profs','ProfController');
 Route::resource('sgs','SgController');
 Route::resource('secretaires','SecretaireController');
