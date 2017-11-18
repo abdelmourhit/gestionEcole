@@ -23,6 +23,8 @@ Route::get('/profil', function(){
     return view('AjouterProfils');
 });
 
+Route::resource('selectionParent','SelectParentController');
+
 Route::resource('profs','ProfController');
 Route::resource('sgs','SgController');
 Route::resource('secretaires','SecretaireController');

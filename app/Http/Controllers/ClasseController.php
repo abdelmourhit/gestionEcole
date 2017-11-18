@@ -51,7 +51,10 @@ class ClasseController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
+        $classe = Classe::find($id);
+        $classe->delete();
+        return redirect('classes');
 
     }
 }

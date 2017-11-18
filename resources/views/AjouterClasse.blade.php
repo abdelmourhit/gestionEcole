@@ -43,9 +43,19 @@
                                                 <td>{{ $classe->libelle }}</td>
                                                 <td>{{ $classe->description }}</td>
                                                 <td>
+                                                  <form action="{{ url('classes/'.$classe->id)}}" method="post">
+                                                      
+                                                      {{ csrf_field() }}
+                                                      {{ method_field('DELETE')}}
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                                      <a class="btn btn-primary btn-xs" href="{{ url('classes/'.$classe->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
-                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                      
+                                                      
+                                                            
+                                                       <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>     
+                                                      </form>
+
+                                                    
                                                 </td>
                                             </tr>
                                         @endforeach

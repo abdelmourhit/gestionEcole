@@ -81,7 +81,10 @@ class ControleController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request,$id){
+        $controle = Controle::find($id);
+        $controle->delete();
+        return redirect('controles');
 
     }
 }

@@ -59,9 +59,9 @@ class MatiereController extends Controller
 
 
     //supprimer
-    public function destroy($id){
-       // $matiere = Matiere::find($id);
-        $matiere = Matiere::where('id', $id)->first();
+    public function destroy(Request $request, $id){
+        $matiere = Matiere::find($id);
+        //$matiere = Matiere::where('id', $id)->first();
         $matiere->delete();
         return redirect('matieres');
 

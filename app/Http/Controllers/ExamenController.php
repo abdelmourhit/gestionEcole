@@ -76,7 +76,9 @@ class ExamenController extends Controller
     }
 
     //supprimer
-    public function destroy(){
-
+    public function destroy(Request $request, $id){
+        $examen = Examen::find($id);
+        $examen->delete();
+        return redirect('examens');
     }
 }

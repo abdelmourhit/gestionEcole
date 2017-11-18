@@ -66,7 +66,10 @@ class VehiculeController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request,$id){
+        $vehicule = Vehicule::find($id);
+        $vehicule->delete();
+        return redirect('vehicules');
 
     }
 }

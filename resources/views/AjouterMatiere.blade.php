@@ -45,9 +45,9 @@
                                                 <td>{{ $matiere->nom_arab }}</td>
                                                 <td>{{ $matiere->classe }}</td>
                                                 <td>
-                                                  <form method="post" action="{{url('matieres/'.$matiere->id)}}">
+                                                  <form  action="{{url('matieres/'.$matiere->id)}}" method="post">
                                                   {{ csrf_field() }}
-                                                  {{ method_field('DELETE') }}
+                                                  {{ method_field('DELETE')}}
                                                     <a href="" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
                                                    <a class="btn btn-primary btn-xs" href="{{ url('matieres/'.$matiere->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
                                                     <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>

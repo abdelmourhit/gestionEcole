@@ -60,7 +60,10 @@ class LivreController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
+        $livre = Livre::find($id);
+        $livre->delete();
+        return redirect('livres');
 
     }
 }

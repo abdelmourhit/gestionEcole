@@ -50,9 +50,14 @@
                                                 <td>{{ $chauffeur->type_permi }}</td>
                                                 <td>{{ $chauffeur->vehicule }}</td>
                                                 <td>
+                                                   <form action="{{ url('chauffeurs/'.$chauffeur->id)}}" method="post">
+                                                      
+                                                      {{ csrf_field() }}
+                                                      {{ method_field('DELETE')}}
                                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                                     <a class="btn btn-primary btn-xs" href="{{ url('chauffeurs/'.$chauffeur->id.'/edit') }}"><i class="fa fa-pencil"></i></a>
-                                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                    <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                  </form>
                                                 </td>
                                             </tr>
                                         @endforeach

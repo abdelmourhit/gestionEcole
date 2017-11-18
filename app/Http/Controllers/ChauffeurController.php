@@ -78,7 +78,10 @@ class ChauffeurController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
+        $chauffeur = Chauffeur::find($id);
+        $chauffeur->delete();
+        return redirect('chauffeurs');
 
     }
 }

@@ -55,7 +55,10 @@ class ActiviteController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
+        $activite = Activite::find($id);
+        $activite->delete();
+        return redirect('activites');
 
     }
 }

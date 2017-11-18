@@ -54,7 +54,10 @@ class SalleController extends Controller
     }
 
     //supprimer
-    public function destroy(){
+    public function destroy(Request $request, $id){
+        $salle = Salle::find($id);
+        $salle->delete();
+        return redirect('salles');
 
     }
 }
