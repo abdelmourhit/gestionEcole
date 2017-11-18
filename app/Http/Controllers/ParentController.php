@@ -17,7 +17,7 @@ class ParentController extends Controller
 
     //affiche le formulaire
     public function create(){
-        return view('AjouterEleve');
+        return view('AjouterParent');
     }
 
     //enregistrer
