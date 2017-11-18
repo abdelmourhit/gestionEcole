@@ -47,7 +47,7 @@ class EleveController extends Controller
 
         $eleve->save();
         
-        return redirect('eleves');
+        return redirect('selectionParent');
     }
 
     //récupérer les info dans le formulaire
@@ -99,3 +99,5 @@ class EleveController extends Controller
         return redirect('eleves');
     }
 }
+
+

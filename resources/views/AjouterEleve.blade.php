@@ -16,15 +16,9 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Crée nouveau Eleve</h4>
 
-                        <ul class="nav nav-tabs">
-                          <li class="active"><a data-toggle="tab" href="#eleve">Eléve</a></li>
-                          <li><a data-toggle="tab" href="#parent">Parent</a></li>
-                        </ul>
 <!-- éléve ************************************************************************************************ -->
-                        <div class="tab-content">
-                          <div id="eleve" class="tab-pane fade in active">
+
                             <h3>Eléve</h3>
                               <form class="form-horizontal style-form" enctype="multipart/form-data" action="{{ url('eleves') }}" method="post">
                               {{ csrf_field() }}
@@ -114,108 +108,8 @@
                               </div>
                                   <input type="submit" class="btn btn-theme02" value="Enregistrer">
                               </form>
-                          </div>
-<!-- end éléve *************************************************************************-->
-<!-- parent *************************************************************************-->
-                          <div id="parent" class="tab-pane fade">
-                            <h3>Parent</h3>
-                              <form class="form-horizontal style-form" enctype="multipart/form-data" action="{{ url('pparents') }}" method="post">
-                                  {{ csrf_field() }}
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Nom :</label>
-                                  <div class="col-sm-10">
-                                      <input name="nom" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Prénom :</label>
-                                  <div class="col-sm-10">
-                                      <input name="prenom" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Date de naissance :</label>
-                                  <div class="col-sm-10">
-                                      <input name="date_naissance" type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
-                                  </div>
-                              </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Sexe</label>
-                                      <div class="col-sm-10">
-                                          <label class="radio-inline">
-                                              <input name="sexe" type="radio" value=0>Homme
-                                          </label>
-                                          <label class="radio-inline">
-                                              <input name="sexe" type="radio" value=1>Femme
-                                          </label>
-                                      </div>
-                                  </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Adresse :</label>
-                                  <div class="col-sm-10">
-                                      <input name="adresse" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Email :</label>
-                                  <div class="col-sm-10">
-                                      <input name="email" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Telephone :</label>
-                                  <div class="col-sm-10">
-                                      <input name="tel" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Fixe :</label>
-                                  <div class="col-sm-10">
-                                      <input name="fixe" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Photo :</label>
-                                  <div class="col-sm-10">
-                                      <input name="photo" type="file" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Ville :</label>
-                                  <div class="col-sm-10">
-                                      <input name="ville" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Nationalité :</label>
-                                  <div class="col-sm-10">
-                                      <input name="nationalite" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">CIN :</label>
-                                  <div class="col-sm-10">
-                                      <input name="cin" type="text" class="form-control">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Profession :</label>
-                                  <div class="col-sm-10">
-                                      <input name="profession" type="text" class="form-control" id="exampleInputDOB1">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Type relation parental :</label>
-                                  <div class="col-sm-10">
-                                      <input name="type_relation_parental" type="text" class="form-control" id="exampleInputDOB1">
-                                  </div>
-                              </div>
-                                  <input type="submit" class="btn btn-theme02" value="Enregistrer">
-                            </form>
 
-                          </div>
-<!-- end parent *************************************************************************-->
-                        </div>
+<!-- end éléve *************************************************************************-->
 
 
                   </div>
