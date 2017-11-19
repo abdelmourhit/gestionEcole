@@ -12,6 +12,12 @@ use App\Classe;
 
 class ControleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
    //lister
     public function index(){
          $listeControle = Controle::all();
@@ -42,6 +48,9 @@ class ControleController extends Controller
        
 
         $controle->save();
+
+        session()->flash('success', 'Controle à été bien enregistré !!');
+        
         return redirect('controles');
     }
 

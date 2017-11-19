@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Activite;
 class ActiviteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //lister
     public function index(){
          $listeActivite= Activite::all();
@@ -28,6 +33,9 @@ class ActiviteController extends Controller
         $activite->duree = $request->input('duree');
         $activite->nbr_place = $request->input('nbr_place');
         $activite->save();
+
+        session()->flash('success', 'Activité a été bien enregistré !!');
+
         return redirect('activites');
     }
 

@@ -8,6 +8,12 @@ use Illuminate\Http\UploadedFile;
 
 class ProfController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //lister
     public function index(){
 
@@ -47,6 +53,8 @@ class ProfController extends Controller
         $prof->salaire = $request->input('salaire');
 
         $prof->save();
+        
+        session()->flash('success', 'Professeur à été bien enregistré !!');
 
         return redirect('profs');
     }

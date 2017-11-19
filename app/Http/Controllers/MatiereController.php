@@ -10,6 +10,12 @@ use App\Classe;
 
 class MatiereController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      //lister
     public function index(){
             $listeMatiere= Matiere::all();
@@ -32,6 +38,9 @@ class MatiereController extends Controller
        
 
         $matiere->save();
+
+        session()->flash('success', 'Matiére à été bien enregistré !!');
+        
         return redirect('matieres');
     }
 

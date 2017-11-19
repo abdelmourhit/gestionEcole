@@ -10,6 +10,12 @@ use Add\Chauffeur;
 
 class VehiculeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
       //lister
     public function index(){
           $ListeVehicule= Vehicule::all();
@@ -36,6 +42,9 @@ class VehiculeController extends Controller
        
 
         $vehicule->save();
+
+        session()->flash('success', 'Véhicule à été bien enregistré !!');
+        
         return redirect('vehicules');
     }
 

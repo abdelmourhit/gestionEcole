@@ -7,6 +7,12 @@ use App\Classe;
 
 class ClasseController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      //lister
     public function index(){
         $listeClasse = Classe::all();
@@ -27,6 +33,9 @@ class ClasseController extends Controller
        
 
         $classe->save();
+
+        session()->flash('success', 'Classe à été bien enregistré !!');
+        
         return redirect('classes');
     }
 

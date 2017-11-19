@@ -7,6 +7,12 @@ use App\Livre;
 
 class LivreController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      //lister
     public function index(){
          $listeLivre= Livre::all();
@@ -31,6 +37,9 @@ class LivreController extends Controller
         $livre->quantite = $request->input('quantite');
         $livre->type = $request->input('type');
         $livre->save();
+
+        session()->flash('success', 'Livre à été bien enregistré !!');
+        
         return redirect('livres');
     }
 

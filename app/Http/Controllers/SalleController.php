@@ -7,6 +7,12 @@ use App\Salle;
 
 class SalleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      //lister
     public function index(){
         $ListeSalle= Salle::all();
@@ -27,6 +33,9 @@ class SalleController extends Controller
         $salle->nbr_eleve = $request->input('nbreleve');
 
         $salle->save();
+
+        session()->flash('success', 'Salle à été bien enregistré !!');
+        
         return redirect('salles');
         
     }

@@ -12,6 +12,12 @@ use App\Classe;
 
 class ExamenController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      //lister
     public function index(){
         $listeExamen = Examen::all();
@@ -42,6 +48,9 @@ class ExamenController extends Controller
        
 
         $examen->save();
+
+        session()->flash('success', 'Examen à été bien enregistré !!');
+        
         return redirect('examens');
     }
 

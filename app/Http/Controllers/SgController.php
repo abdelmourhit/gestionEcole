@@ -7,6 +7,12 @@ use App\Sg;
 use Illuminate\Http\UploadedFile;
 class SgController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //lister
     public function index(){
 
@@ -45,6 +51,8 @@ class SgController extends Controller
         $sg->salaire = $request->input('salaire');
 
         $sg->save();
+
+        session()->flash('success', 'Surveillant Général à été bien enregistré !!');
         
         return redirect('sgs');
     

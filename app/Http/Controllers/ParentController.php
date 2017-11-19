@@ -7,6 +7,12 @@ use App\Pparent;
 use Illuminate\Http\UploadedFile;
 class ParentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     //lister
     public function index(){
 

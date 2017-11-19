@@ -9,6 +9,12 @@ use App\Pparent;
 
 class selectParentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $listeParent= Pparent::all();
         return view('selectionParent', ['pparents'=> $listeParent]);

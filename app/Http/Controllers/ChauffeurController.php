@@ -10,6 +10,12 @@ use App\Vehicule;
 
 class ChauffeurController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //lister
     public function index(){
          $listeChauffeur= Chauffeur::all();
@@ -42,6 +48,9 @@ class ChauffeurController extends Controller
        $chauffeur->vehicule = $request->input('vehicule');
 
         $chauffeur->save();
+
+        session()->flash('success', 'Chauffeur à été bien enregistré !!');
+
         return redirect('chauffeurs');
     }
 

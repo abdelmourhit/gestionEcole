@@ -9,6 +9,12 @@ use Illuminate\Http\UploadedFile;
 
 class EleveController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     //lister
     public function index(){
 

@@ -16,6 +16,13 @@
               <div class="col-lg-12">
                   <div class="form-panel">
 
+                      @if(session()->has('success'))
+                          <div class="alert alert-success">
+                              <i class="fa fa-check" aria-hidden="true"></i>
+                              {{ session()->get('success') }}
+                          </div>
+                      @endif
+
                         <ul class="nav nav-tabs">
                           <li class="active"><a data-toggle="tab" href="#controle">Examens</a></li>
                          
